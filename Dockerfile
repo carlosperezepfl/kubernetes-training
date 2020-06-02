@@ -35,4 +35,3 @@ USER node
 EXPOSE 8000
 
 ENTRYPOINT ["tini", "--"]
-CMD ["gulp", "serve"]

@@ -5,7 +5,7 @@ LABEL maintainer="Fabrice Vergnenegre <fabrice.vergnenegre@sokube.ch>, Quentin H
       io.k8s.description="Courses" \
       io.k8s.display-name="Courses"
 
-#COPY courses/01/core-concepts  /reveal.js
+#COPY 01/core-concepts  /reveal.js
 
 #RUN sed gulpfile
 

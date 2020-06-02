@@ -1,18 +1,18 @@
 FROM node:lts-buster-slim
 
-LABEL MAINTAINER="" \
+LABEL maintainer="Fabrice Vergnenegre <fabrice.vergnenegre@sokube.ch>, Quentin HENNEAUX <quentin.henneaux@sokube.ch>" \
+      build_date="02-06-2020" \
       io.k8s.description="RevealJS" \
-      io.k8s.display-name="RevealJS" \
-      io.openshift.tags="" 
+      io.k8s.display-name="RevealJS"
 	  
-RUN apt-get update -y && \
-    apt-get install -y \
+RUN apt-get update -y \
+    && apt-get install -y \
         tini \
         wget \
         g++ \
         make \
-        python && \
-    apt-get clean -y 
+        python \
+    && apt-get clean -y 
 
 RUN wget -qO /tmp/reveal.js.tar.gz https://github.com/hakimel/reveal.js/archive/4.0.2.tar.gz \
     && tar -xvf /tmp/reveal.js.tar.gz \
@@ -24,11 +24,9 @@ RUN mkdir -p /reveal.js/node_modules \
     && npm i gulp -D \
     && npm i --prefix /reveal.js \
     && npm cache clean --force \
-    && rm -rf /root/.node-gyp /tmp/npm* /tmp/phantomjs
+    && rm -rf /root/.node-gyp /tmp/npm* /tmp/phantomjs /var/lib/apt/lists/*
 
 WORKDIR /reveal.js
-
-#COPY /courses-files/ /reveal.js/
 
 RUN chown -R node:node /reveal.js
 

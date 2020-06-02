@@ -4,7 +4,7 @@
 
 ### Available Courses :
 
- - [01 - Core concepts](https://github.com/sokube/kubernetes-training/tree/master/courses/01-core-concepts)
+ - [01 - Core concepts (Example)](https://github.com/sokube/kubernetes-training/tree/master/courses/01-core-concepts)
 
 ### Including a new course : 
 

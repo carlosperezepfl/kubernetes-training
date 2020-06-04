@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name:  my-todo-list
+  labels:
+    app:  my-todo-list
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        name:  my-name
+    spec:
+      containers:
+      - image:  registry/my-todo-list:latest
+        name:  my-todo-list
+        env:
+        - name:  NAME
+          value:  VALUE       
+        ports:
+        - containerPort:  8000
+          name:  my-todo-list
+        volumeMounts:
+        - mountPath: /data
+          name: data
+      volumes:
+        - name: data
+          emptyDir: {}
+      restartPolicy: Always
+      imagePullPolicy: Always

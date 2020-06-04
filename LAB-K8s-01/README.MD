@@ -50,8 +50,28 @@ Client Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.6", GitCom
 ## Kubectl Configuration
 Each participant has been assigned previously a given **namespace** on the target cluster to be able to work through the labs. In addition, a corresponding kubectl config file has been provided by email.
 
+![Philadelphia's Magic Gardens. This place was so cool!](./img/overview-setup.png "Philadelphia's Magic Gardens")
+
 - Copy the file you’ve received on your computer in the k8s-training directory with name **k8s-training-config**, and test:
 ```
-kubectl --kubeconfig=$HOME/kubernetes-training/k8s-training-config get pods
+kubectl --kubeconfig=$HOME/k8s-training/k8s-training-config get pods
 ```
-- You should have no connection error to the cluster, and no resources found in the <your-namespace> namespace
+- You should have no connection error to the cluster, and no resources found in the **your-namespace** namespace:
+```
+No resources found in tatooine namespace.
+```
+
+- To avoid the participant to specify the config file for each command, we will set the **KUBECONFIG** environment variable to point to our **k8s-training-config** file:
+```
+export KUBECONFIG=$HOME/k8s-training/k8s-training-config
+```
+- Test without specifying the file:
+```
+kubectl get pods
+```
+- Should result in:
+```
+No resources found in tatooine namespace.
+```
+
+Congratulations, your lab environment is ready!

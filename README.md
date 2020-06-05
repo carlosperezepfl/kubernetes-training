@@ -1,6 +1,10 @@
 # Kubernetes Training
 
-> **Description:** ...
+!special/nautilus-clipboard
+copy
+file:///tmp/VMwareDnD/pZfhLo/hidora.png
+
+
 
 ### Available Courses :
 
@@ -10,13 +14,3 @@
  - [LAB-K8S-04 - Services](./LAB-K8S-04/README.MD)
  - [LAB-K8S-05 - Deployment](./LAB-K8S-05/README.MD)
  - [LAB-K8S-06 - Config Maps & Environment Variables](./LAB-K8S-06/README.MD)
-
-### Including a new course : 
-
-
-    ## courses/Dockerfile
-    
-    COPY example/example.html /reveal.js
-    
-    RUN sed -i gulpfile.js -e "s/index\.html/example\/**/"
-

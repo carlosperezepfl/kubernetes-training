@@ -17,6 +17,7 @@ At the end of this lab, each participant will have:
 
 ## Setup
 
+![kubectl](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-01/img/kubectl.gif?raw=true)
 - Create a working directory k8s-training that will serve as the root for the lab’s work
 
 ``` shell

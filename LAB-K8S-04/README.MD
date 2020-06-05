@@ -1,40 +1,85 @@
-
-
-# LAB-K8S-XX: XXX
+# LAB-K8S-04: Services
 
 **Description**: *Put the description here*
 
 **Duration**: *Insert the estimated duration, eg: ±20m*
 
 ## Goals
+
 *List the goals using bullet point per goal, eg:
+
 At the end of this lab, each participant will have:*
-*- a working local environment to perform the k8s labs on a remote k8s cluster, inside its own namespace.*
-*- a working local environment to perform the k8s labs on a remote k8s cluster, inside its own namespace.*
+
+- *!!!*
+
+- *!!!*
+
 
 ## Prerequisites
+
 *List prerequisites using bullet point per goal, eg:*
+
 *- Each participant has received personal pre-generated kubectl config file by email and the name of the corresponding **namespace***
+
 *- A laptop or station with Windows, MacOS or Linux and a working Internet connection are necessary.*
 
-----
 
-## Chapter
- 
-- Step 1
+## Creating a service
 
-``` shell 
-shell command
-``` 
+-   As a first step, before creating our first service, we will inspect the service.yaml file with the :
+    
+    
+```
+$ cat /LAB-K8S-04-services/service.yaml
+```
 
-- Step 2:
+-   In this second step, we will edit this file with vim to specify the type of service we want (ClusterIP) :
+    
+```
+$ vim service.yaml
+```
+---
+> **TIPS:** The **YAML** is used for configuration files :
+> Don't forget that .yaml files have the particularity of having an indentation exclusively with **spaces** and not **tabulations**.
+---
+| TYPES | USAGES |
+|--|--|
+| ClusterIP | Expose the service on an internal ip.(default type) |
+| NodePort | Expose the service on the IP of each node |
+| LoadBalancing | ( !!! ) |
 
-## Chapter
- 
-- Step 1
+---
+-   Your file should look like the file below :
+    
 
-``` shell 
-shell command
-``` 
 
-- Step 2:
+>**Tips 1 :** Save your file with :
+```
+:wq
+```
+
+>**Tips 2 :** To enable line numbers on the vim editor, just enter :
+
+```
+:set nu + enter
+```
+---
+-   **Well Done !** It's time to deploy this service :
+    
+
+```
+kubectl -f create service.yaml
+```
+
+-   It’s a **TRAP** ! Or **NOT**, there's just one more thing missing :
+    
+
+( !!! SCHEMA SERVICE SELECTOR LABEL !!!=
+
+-   Let's go see if everything went well :
+    
+
+```
+kubectl get services
+```
+

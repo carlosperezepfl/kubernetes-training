@@ -26,7 +26,7 @@ kubectl get pods
 - :white_check_mark: What is the **name** of the pod that has been created? 
 
 
-> #### PODS Status
+#### POD Status
 > - **Pending**: The Pod has been accepted by the Kubernetes system, but one or more of the Container images has not been created. This includes time before being scheduled as well as time spent downloading images over the network, which could take a while.
 > - **Running**: The Pod has been bound to a node, and all of the Containers have been created. At least one Container is still running, or is in the process of starting or restarting.
 > - **Succeeded**: All Containers in the Pod have terminated in success, and will not be restarted.
@@ -34,12 +34,14 @@ kubectl get pods
 > - **Unknown**: For some reason the state of the Pod could not be obtained, typically due to an error in communicating with the host of the Pod.
 - :white_check_mark: What is the pod **status** ? 
 
+#### POD node
 Now run the same command with **-o wide** option:
 ``` shell
 kubectl get pods -o wide
 ```
 - :white_check_mark: On what **node** is this pod running ? 
 
+#### POS details
 In order to to look more thoroughly at a POD's details we need to use the kubectl *describe* command for pods.
 
 ``` shell
@@ -107,6 +109,8 @@ Events:
 - :white_check_mark: What does this container do exactly ? (check **command**)
 - :white_check_mark: Where does it output text ?
 
+#### Executing commands in a POD container
+
 With the **kubectl exec** command, we can execute commands remotely into the containers of specified pods. Here we run an interactive shell session (/bin/sh) into the unique container of the POD.
 
 ``` shell
@@ -119,9 +123,17 @@ kubectl exec -it welcome -- /bin/sh
 bin          etc          proc         sys          usr          welcome.txt
 dev          home         root         tmp          var
 / # more welcome.txt
-welcome on tatooine
+welcome on ...........
 / # exit
 ```
+#### Restart Policy
+
+> A PodSpec has a restartPolicy field with possible values Always, OnFailure, and Never. The default value is Always. restartPolicy applies to all Containers in the Pod. restartPolicy only refers to restarts of the Containers by the kubelet on the same node. Exited Containers that are restarted by the kubelet are restarted with an exponential back-off delay (10s, 20s, 40s …) capped at five minutes, and is reset after ten minutes of successful execution.
+
+- :white_check_mark: What value in in the pod **restartPolicy**?
+- :white_check_mark: Can you confirm ? How ?
+
+#### POD as YAML
 
 - Extract the POD's in the **YAML format**, for future usage:
 
@@ -131,14 +143,21 @@ kubectl get pod welcome -o=yaml > welcome.yaml
 
 - :white_check_mark: Have a look at welcome.yaml, do you think we have only the strict minimum content necessary to create a POD here?
 
+#### Delete a POD
 Now we can work on our own PODs, delete the welcome pod:
 
 ``` shell 
 kubectl delete pod welcome
 ``` 
 
+----
 ## Creating your first POD
- 
+
+Inside your landingzone, the instructor has initialized a set of kubernetes objects that will allow you to see your landing zone PODs inside a browser.
+``` shell
+```
+:warning: Do not delete these objects
+
 - Step 1
 
 ``` shell 

@@ -11,7 +11,7 @@ spec:
     containers:
     - name: test
 #    image: sokubedoker/simple-todo:1.0 <- Typo !!!
-    image: sokubedoker/simple-todo:1.0
+    image: sokubedocker/simple-todo:1.0
     ports:
 #    - containerPort: 80 <- In order to be visible in the landing zone (service) port is 8080
     - containerPort: 8080

@@ -51,7 +51,26 @@ BuildDate:"2020-01-18T23:31:31Z", GoVersion:"go1.13.5", Compiler:"gc",
 Platform:"linux/amd64"}
 ``` 
 
-## Kubectl Configuration
+## Kubectl Introduction
+
+> The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For a complete list of kubectl operations, see Overview of kubectl.
+
+Kubectl relies on a **configuration file** that defines:
+- multiple **clusters**, with the master URL (*server*) and their root public certificate to validate their authenticity. 
+- multiple **users**, with their private and public keys. 
+- multiple **contexts**, pairs of users+cluster that will be used for kubectl to know which identity to use to connect on a particular cluster. 
+
+In the example below, the configuration file has defined:
+- 2 **clusters**: *Cluster A*, accessible through its master node on *Server A*, and *Cluster B*, accessinble on *Server B*
+- 3 **users**: *UserA*, *UserB* and *UserC*
+- 2 **contexts**: *Context X* which represents *UserC* on *Cluster B*, and *Context Y*, which represents the same user for *Cluster A*.
+
+![Overview](./img/kubectl-config.png)
+
+The *Context X* being the default in the file, when kubectl performs a command, it will use the credentials of *UserC* and connect to *Cluster B* (using *Server B* URL)
+
+
+## Kubectl Labs Configuration
 Each participant has been assigned previously a given **namespace** on the target cluster to be able to work through the labs. In addition, a corresponding **kubectl config file** has been provided by email.
 
 ![Overview](./img/overview-setup.png)
@@ -86,4 +105,24 @@ kubectl get pods
 No resources found in tatooine namespace.
 ```
 
-##Congratulations, your lab environment is ready!
+**:cocktail: Congratulations, your lab environment is ready ! :cocktail:**
+
+---
+
+## More
+
+Some links:
+- [kubectl overview](https://kubernetes.io/docs/reference/kubectl/overview/)
+
+---
+
+## Quiz
+
+- Give a quick look at the configuration file that has been provided and identify the various clusters, users and context information.
+``` shell
+more k8s-training-config
+```
+
+- :speech_balloon: On which port will kubectl connect to the sokube-k8s-training cluster's master ?
+- :speech_balloon: If you want to impersonate another participant, can you simply change the user name and execute a command ?
+- :speech_balloon: What would you need ?

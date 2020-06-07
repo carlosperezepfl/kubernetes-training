@@ -17,7 +17,6 @@ At the end of this lab, each participant will have:
 
 ## Setup
 
-![kubectl](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-01/img/kubectl-install.gif?raw=true)
 - Create a working directory k8s-training that will serve as the root for the lab’s work
 
 ``` shell
@@ -117,9 +116,9 @@ No resources found in tatooine namespace.
 more k8s-training-config
 ```
 
-- :speech_balloon: On which port will kubectl connect to the sokube-k8s-training cluster's master ?
-- :speech_balloon: If you want to impersonate another participant, can you simply change the user name and execute a command ?
-- :speech_balloon: What would you need ?
+- :white_check_mark: On which port will kubectl connect to the sokube-k8s-training cluster's master ?
+- :white_check_mark: If you want to impersonate another participant, can you simply change the user name and execute a command ?
+- :white_check_mark: What would you need ?
 
 ---
 

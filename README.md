@@ -1,9 +1,7 @@
 # Kubernetes Training
 
-!special/nautilus-clipboard
-copy
-file:///tmp/VMwareDnD/pZfhLo/hidora.png
-
+Our training labs infrastructure is graciously provided by our partner:
+![hidora](./img/hidora.png)
 
 
 ### Available Courses :
@@ -14,3 +12,4 @@ file:///tmp/VMwareDnD/pZfhLo/hidora.png
  - [LAB-K8S-04 - Services](./LAB-K8S-04/README.MD)
  - [LAB-K8S-05 - Deployment](./LAB-K8S-05/README.MD)
  - [LAB-K8S-06 - Config Maps & Environment Variables](./LAB-K8S-06/README.MD)
+ - [LAB-K8S-07 - Secrets](./LAB-K8S-07/README.MD)

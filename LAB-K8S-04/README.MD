@@ -74,7 +74,7 @@ $ vim service.yaml
 kubectl create -f service.yaml
 ```
 
--   It’s a **TRAP** ! Or **NOT**, there's just "one" more thing missing (**Read the return of the terminal**) 
+-   It’s a **TRAP** ! Or **NOT**, there's just "one" more thing missing (**Read terminal returns**) 
 
 You can also take a look at this image and make a comparison of your description file :
     

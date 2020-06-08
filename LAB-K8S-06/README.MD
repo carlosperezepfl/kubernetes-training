@@ -1,4 +1,8 @@
 
+.navbar {
+   background-color: none;
+   color: white;
+}
 
 # LAB-K8S-XX: XXX
 

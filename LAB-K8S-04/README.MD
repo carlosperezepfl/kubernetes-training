@@ -44,9 +44,9 @@ $ vim service.yaml
 ---
 | TYPES | USAGES |
 |--|--|
-| ClusterIP | Expose the service on an internal ip.(default type) |
+| ClusterIP | Expose the service on an internal ip (default type) |
 | NodePort | Expose the service on the IP of each node |
-| LoadBalancing | ( !!! ) |
+| LoadBalancing | The process of efficiently distributing network traffic between multiple services |
 
 ---
 -   Your file should look like the file below :

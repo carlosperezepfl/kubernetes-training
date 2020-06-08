@@ -77,7 +77,7 @@ kubectl create -f service.yaml
     
 ![Plan](./img/02-service.png)
 
--   What do you think ?
+-   What do you think ? (Find the error, fix it and make a new kubectl create -f service.yaml)
 
 -   Let's go see if everything went well :
     
@@ -86,3 +86,4 @@ kubectl create -f service.yaml
 kubectl get services
 ```
 
+![Get service](./img/04-service.png)

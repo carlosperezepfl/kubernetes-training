@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-css-additional
+  labels:
+    app: simple-todo
+data:
+  css-additional.css: |
+    # css_additional example
+    .navbar { 
+      background-color: none; ### Change this value & delete pod 
+      color: white; 
+    }

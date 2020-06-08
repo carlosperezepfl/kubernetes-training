@@ -4,7 +4,7 @@
    color: white;
 }
 
-# LAB-K8S-XX: XXX
+# LAB-K8S-06: ConfigMap
 
 **Description**: *Put the description here*
 

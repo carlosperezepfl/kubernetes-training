@@ -18,7 +18,7 @@ spec:
           image: mowhank/simple-todo-list:1.0.1
           ports:
           - containerPort: 8080
-            livenessProbe:
+          livenessProbe:
             httpGet:
               path: /health
               port: 8080

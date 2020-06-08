@@ -68,8 +68,10 @@ $ vim service.yaml
     
 
 ```
-kubectl -f create service.yaml
+kubectl create -f service.yaml
 ```
+
+![Error console](./img/03-service.png)
 
 -   It’s a **TRAP** ! Or **NOT**, there's just one more thing missing (Look at this image and make a comparison of your description file) :
     

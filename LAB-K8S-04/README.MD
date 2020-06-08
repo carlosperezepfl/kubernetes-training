@@ -23,6 +23,7 @@ At the end of this lab, each participant will have:*
 
 *- A laptop or station with Windows, MacOS or Linux and a working Internet connection are necessary.*
 
+![Arch](./img/00-service.png)
 
 ## Creating a service
 

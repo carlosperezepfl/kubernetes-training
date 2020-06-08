@@ -17,13 +17,7 @@ At the end of this lab, each participant will have:*
 
 ## Prerequisites
 
-*List prerequisites using bullet point per goal, eg:*
-
-*- Each participant has received personal pre-generated kubectl config file by email and the name of the corresponding **namespace***
-
-*- A laptop or station with Windows, MacOS or Linux and a working Internet connection are necessary.*
-
----
+ - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
 
 ![Arch](./img/00-service.png)
 

@@ -1,8 +1,8 @@
 # LAB-K8S-04: Services
 
-**Description**: *Put the description here*
+**Description**: In this lab, participants will learn how to use services, get to know their different types and learn about debugging
 
-**Duration**: *Insert the estimated duration, eg: ±20m*
+**Duration**: *±30m*
 
 ## Goals
 
@@ -10,9 +10,9 @@
 
 At the end of this lab, each participant will have:*
 
-- *!!!*
+- Creating and editing a Service Object.
 
-- *!!!*
+- Synthax errors debugging.
 
 
 ## Prerequisites
@@ -76,15 +76,14 @@ kubectl create -f service.yaml
 
 ![Error console](./img/03-service.png)
 
--   It’s a **TRAP** ! Or **NOT**, there's just one more thing missing (Look at this image and make a comparison of your description file) :
+-   It’s a **TRAP** ! Or **NOT**, there's just "one" more thing missing (Look at this image and make a comparison of your description file) :
     
 ![Plan](./img/02-service.png)
 
--   What do you think ? (Find the error, fix it and make a new kubectl create -f service.yaml)
+-   What do you think ? (Find errors, fix them and create a new kubectl -f service.yaml)
 
 -   Let's go see if everything went well :
     
-
 ```
 kubectl get services
 ```

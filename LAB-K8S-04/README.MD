@@ -1,8 +1,8 @@
 # LAB-K8S-04: Services
 
-**Description**: *Put the description here*
+**Description**: In this lab, participants will learn how to use services, get to know their different types and learn about debugging
 
-**Duration**: *Insert the estimated duration, eg: ±20m*
+**Duration**: *±30m*
 
 ## Goals
 
@@ -10,19 +10,16 @@
 
 At the end of this lab, each participant will have:*
 
-- *!!!*
+- Creating and editing a Service Object.
 
-- *!!!*
+- Synthax errors debugging.
 
 
 ## Prerequisites
 
-*List prerequisites using bullet point per goal, eg:*
+ - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
 
-*- Each participant has received personal pre-generated kubectl config file by email and the name of the corresponding **namespace***
-
-*- A laptop or station with Windows, MacOS or Linux and a working Internet connection are necessary.*
-
+![Arch](./img/00-service.png)
 
 ## Creating a service
 
@@ -44,9 +41,9 @@ $ vim service.yaml
 ---
 | TYPES | USAGES |
 |--|--|
-| ClusterIP | Expose the service on an internal ip.(default type) |
+| ClusterIP | Expose the service on an internal ip (default type) |
 | NodePort | Expose the service on the IP of each node |
-| LoadBalancing | ( !!! ) |
+| LoadBalancing | The process of efficiently distributing network traffic between multiple services |
 
 ---
 -   Your file should look like the file below :
@@ -68,18 +65,21 @@ $ vim service.yaml
     
 
 ```
-kubectl -f create service.yaml
+kubectl create -f service.yaml
 ```
 
--   It’s a **TRAP** ! Or **NOT**, there's just one more thing missing :
-    
+-   It’s a **TRAP** ! Or **NOT**, there's just "one" more thing missing (**Read terminal returns**) 
 
-( !!! SCHEMA SERVICE SELECTOR LABEL !!!=
+You can also take a look at this image and make a comparison of your description file :
+    
+![Plan](./img/02-service.png)
+
+-   What do you think ? (Find errors, fix them and create a new kubectl -f service.yaml)
 
 -   Let's go see if everything went well :
     
-
 ```
 kubectl get services
 ```
 
+![Get service](./img/04-service.png)

@@ -153,6 +153,22 @@ kubectl delete pod welcome
 ----
 ## Creating your first POD
 
+>**Tips 1 :** Declarative vs Imperative :
+> **Declarative :** Description of a desired state, the system (Docker, Kubernetes ...) will try to reach this state in time. 
+> **Imperative/Procedurale :** Control of the final state.
+
+Example of the imperative/procedurale command use to deploy a pod :
+
+``` 
+$ kubectl run --generator=run-pod/v1 www-1 --image=hello-world:latest
+```
+
+A declarative approach, would be to describe the desired state in a file and to call it with this command : 
+
+``` 
+$ kubectl apply -f description.yaml 
+```
+
 Inside your landingzone, the instructor has initialized a set of kubernetes objects that will allow you to see your landing zone PODs inside a browser.
 
 :warning: TODO :warning:

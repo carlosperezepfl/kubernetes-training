@@ -99,7 +99,7 @@ export KUBECONFIG=$HOME/k8s-training/k8s-training-config
 kubectl get pods
 ```
 
-- Should result in:
+- :heavy_exclamation_mark: REDO :heavy_exclamation_mark: Should result in:
 
 ``` shell
 No resources found in tatooine namespace.

@@ -154,9 +154,8 @@ kubectl delete pod welcome
 ## Creating your first POD
 
 Inside your landingzone, the instructor has initialized a set of kubernetes objects that will allow you to see your landing zone PODs inside a browser.
-``` shell
-```
-:warning: Do not delete these objects
+
+:warning: TODO :warning:
 
 - Step 1
 

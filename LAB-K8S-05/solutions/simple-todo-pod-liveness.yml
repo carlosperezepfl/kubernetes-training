@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+    name: my-simple-todo-pod
+    labels:
+    app: simple-todo
+    namespace: <YOUR NAMESPACE>
+spec:
+    containers:
+    - name: test
+      image: sokubedocker/simple-todo:1.1
+      ports:
+      - containerPort: 8080
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: 8080
+        periodSeconds: 5
+        initialDelaySeconds: 5
+        timeoutSeconds: 1

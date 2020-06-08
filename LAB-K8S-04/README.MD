@@ -71,10 +71,11 @@ $ vim service.yaml
 kubectl -f create service.yaml
 ```
 
--   It’s a **TRAP** ! Or **NOT**, there's just one more thing missing :
+-   It’s a **TRAP** ! Or **NOT**, there's just one more thing missing (Look at this image and make a comparison of your description file) :
     
+![Plan](./img/02-service.png)
 
-( !!! SCHEMA SERVICE SELECTOR LABEL !!!=
+-   What do you think ?
 
 -   Let's go see if everything went well :
     

@@ -74,9 +74,9 @@ $ vim service.yaml
 kubectl create -f service.yaml
 ```
 
-![Error console](./img/03-service.png)
+-   It’s a **TRAP** ! Or **NOT**, there's just "one" more thing missing (**Read the return of the terminal**) 
 
--   It’s a **TRAP** ! Or **NOT**, there's just "one" more thing missing (Look at this image and make a comparison of your description file) :
+You can also take a look at this image and make a comparison of your description file :
     
 ![Plan](./img/02-service.png)
 

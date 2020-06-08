@@ -83,6 +83,3 @@ kubectl get services
 ```
 
 ![Get service](./img/04-service.png)
-
-
-!!! ### ADD N-E (Invert Port/TargetPort) !!!  

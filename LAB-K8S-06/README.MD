@@ -30,7 +30,7 @@ And that's where **configMaps** come in.
 
 >**WARN :** A configMap must not contain sensitive data.
 
- - Read [Concepts - ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/)
+ - Read | [Concepts - ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/)
  
 It's time to create our first configMap :
 
@@ -62,7 +62,7 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
     kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment.yml
 ```
 
-- Add a volume and volumeMount based on the following official documentation : Read [Populate a Volume with data stored in a ConfigMap
+- Add a volume and volumeMount based on the following official documentation : Read | [Populate a Volume with data stored in a ConfigMap
 ](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#populate-a-volume-with-data-stored-in-a-configmap)
 > mountPath must match : /usr/src/app/static/css/css-additional
 --- 

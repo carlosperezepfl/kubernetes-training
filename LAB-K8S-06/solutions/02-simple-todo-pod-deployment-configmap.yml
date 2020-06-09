@@ -16,6 +16,12 @@ spec:
       containers:
         - name: my-simple-todolist
           image: mowhank/simple-todo-list:1.0.1
+          env:
+            - name: FAVORITE_SW_HERO
+              valueFrom:
+                configMapKeyRef:
+                  name: name-hero
+                  key: name_hero_key 
           ports:
           - containerPort: 8080
           livenessProbe:

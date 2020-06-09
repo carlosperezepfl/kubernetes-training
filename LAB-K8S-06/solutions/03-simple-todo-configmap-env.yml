@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-env
+data:
+  INFO_PLANET: "Tatooine"
+  INFO_CLIMATE: "Arid"
+  INFO_TERRAIN: "Desert"
+  INFO_POPULATION: "200000"
+  INFO_RESIDENT: "Beru Whitesun lars"

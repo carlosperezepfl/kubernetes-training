@@ -11,7 +11,7 @@ At the end of this lab, each participant will have:*
 
 
 ## Prerequisites
-
+ - [LAB-K8S-01 - Basic Setup](../LAB-K8S-01/README.MD)
  - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
 
 ---
@@ -19,34 +19,12 @@ At the end of this lab, each participant will have:*
 
 ![Arch](./img/00-service.png)
 
-## Creating a service
+## Service
 
--   As a first step, before creating our first service, we will inspect the service.yaml file with the :
-    
-    
-```
-$ cat /LAB-K8S-04-services/service.yaml
-```
+![Service example](./img/01-service.gif)
+### Creating a Service :
 
--   In this second step, we will edit this file with vim to specify the type of service we want (ClusterIP) :
-    
-```
-$ vim service.yaml
-```
----
-> :bulb: **YAML for configuration files**
-> Don't forget that .yaml files have the particularity of having an indentation exclusively with **spaces** and not **tabulations**.
----
-| TYPES | USAGES |
-|--|--|
-| ClusterIP | Expose the service on an internal ip (default type) |
-| NodePort | Expose the service on the IP of each node |
-| LoadBalancing | The process of efficiently distributing network traffic between multiple services |
-
----
--   Your file should look like the file below :
-    
-
+- Open https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/#creating-a-service and read the example Service specification.
 
 >**Tips 1 :** Save your file with :
 ```
@@ -59,20 +37,57 @@ $ vim service.yaml
 :set nu + enter
 ```
 ---
--   **Well Done !** It's time to deploy this service :
+
+- Create a Service inside your namespace that will match the following specifications (solution here) :
+  - name --> service-my-todo-list
+  - selector --> app: my-todo-list
+  - type --> ClusterIP
+  - port --> 80
+  - targetPort --> 8080
+  
+> **TIPS:** The **YAML** is used for configuration files :
+> Don't forget that .yaml files have the particularity of having an indentation exclusively with **spaces** and not **tabulations**.
+---
+| TYPES | USAGES |
+|--|--|
+| ClusterIP | Expose the service on an internal ip (default type) |
+| NodePort | Expose the service on the IP of each node |
+| LoadBalancing | The process of efficiently distributing network traffic between multiple services |
+
+---
+  
+- Deploy this newly created file :
+```
+    $ kubectl create -f service-my-todo-list.yml
+```
+- Let's make sure it was created :
+```
+    $ kubectl get services
+``` 
+- Congratulations, but it's not over yet. That would have been too simple. It turns out that in a hurry, we deployed a service that didn't seem to work... I'll let you see that.
+       
+```
+$ cat /LAB-K8S-04-services/service-with-bugs.yml
+```
+
+-  It's a trap... A real storm came through here... Correct all these mistakes!
+    
+```
+$ vim service.yml
+```
+
+```
+$ mv service-with-bugs.yml service.yml
+```
+
+---
+
+-  **Well Done !** It's time to deploy this service :
     
 
 ```
 kubectl create -f service.yaml
 ```
-
--   It’s a **TRAP** ! Or **NOT**, there's just "one" more thing missing (**Read terminal returns**) 
-
-You can also take a look at this image and make a comparison of your description file :
-    
-![Plan](./img/02-service.png)
-
--   What do you think ? (Find errors, fix them and create a new kubectl -f service.yaml)
 
 -   Let's go see if everything went well :
     
@@ -81,3 +96,4 @@ kubectl get services
 ```
 
 ![Get service](./img/04-service.png)
+

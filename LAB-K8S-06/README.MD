@@ -1,5 +1,3 @@
-
-
 # LAB-K8S-06: ConfigMaps
 
 **Description**: In this lab, participants will learn how to use ConfigMap, as a first step, a configMap (css file) that will overwrite the existing files.
@@ -40,7 +38,7 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 
 - Open [https://kubernetes.io/docs/concepts/configuration/configmap/#configmaps-and-pods](https://kubernetes.io/docs/concepts/configuration/configmap/#configmaps-and-pods) and read the example configMap specification.
 
-- Create a  **configMap**  inside your namespace that will match the following specifications (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/)) :
+- Create a  **configMap**  inside your namespace that will match the following specifications (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/01-simple-todo-configmap.yml)) :
 - Specifications : 
 
 	- name is configmap-css-additionnal
@@ -64,7 +62,7 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 
 - Add a volume and volumeMount based on the following official documentation : Read | [Populate a Volume with data stored in a ConfigMap
 ](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#populate-a-volume-with-data-stored-in-a-configmap)
-> mountPath must match : /usr/src/app/static/css/css-additional
+> mountPath must match : /usr/src/app/static/css/css-additional (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/02-simple-todo-pod-deployment-configmap.yml)) :
 
 - Once finished, apply the new configuration of your deployment :
 

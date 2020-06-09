@@ -1,6 +1,6 @@
 
 
-# LAB-K8S-05: Deployment
+# LAB-K8S-06: ConfigMaps
 
 **Description**: In this lab, participants will learn how to use ConfigMap, as a first step, a configMap (css file) that will overwrite the existing files, 
 
@@ -12,8 +12,8 @@ At the end of this laboratory, each participant will be able to set up a configM
 ## Prerequisites
  - [LAB-K8S-01 - Basic Setup](../LAB-K8S-01/README.MD)
  - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
- - [LAB-K8S-04 - PODs](../LAB-K8S-03/README.MD)
- - [LAB-K8S-05 - PODs](../LAB-K8S-05/README.MD)
+ - [LAB-K8S-04 - Services](../LAB-K8S-03/README.MD)
+ - [LAB-K8S-05 - Deployments](../LAB-K8S-05/README.MD)
 ---
 
 ## Trouble with the force

@@ -59,11 +59,13 @@ At the end of this lab, each participant will have:*
 ---
   
 - Deploy this newly created file :
+```
     $ kubectl create -f service-my-todo-list.yml
-    
+```
 - Let's make sure it was created :
+```
     $ kubectl get services
-    
+``` 
 - Congratulations, but it's not over yet. That would have been too simple. It turns out that in a hurry, we deployed a service that didn't seem to work... I'll let you see that.
        
 ```

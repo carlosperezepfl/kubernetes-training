@@ -81,10 +81,50 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 ```
 
 - Let's go to the next step :
-- We want to change a parameter of our NodeJS application by passing it through an environment variable, that's what we're going to do from now on :
+- We would like to add two parameters to our NodeJS application to highlight our favorite Star wars character and movie. 🔥 "Let's go Chewie !" 🔥 :
 
+- As a first step, refer to the official documentation : Read | [Use ConfigMap-defined environment variables in Pod commands
+](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#use-configmap-defined-environment-variables-in-pod-commands)
 
+### Creating a new configMap (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/03-simple-todo-configmap-env.yml)) : 
 
+- name is configmap-env
+- data with content :
+``` shell
+data:
+  FAVORITE_SW_HERO: "Dark Vador"
+  FAVORITE_SW_MOVIE: "..."
+```
+
+- Deploy this newly created file : 
+``` shell
+    $ kubectl create -f configmap-env.yml
+```
+
+- Let's make sure it's been created :
+``` shell
+    $ kubectl get configmaps
+```
+
+### Creating a new deployment :
+
+ - Retrieve the deployment you have used in the past :
+``` shell
+    $ kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment.yml
+```
+
+- Add the following two environment variables (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/04-simple-todo-pod-deployment-configmap-env.yml)) :
+
+	- SW_HERO with key FAVORITE_SW_HERO
+	- SW_MOVIE with keu FAVORITE_SW_MOVIE
+	
+- Let's apply our changes ! 
+
+``` shell
+    $ kubectl apply -f my-todo-deployment.yml
+```
+
+- Congratulations, that's it for the configMaps, let's move on to Secrets.
 --- 
 
 | CHARACTER | SHORTCUT | USAGE |

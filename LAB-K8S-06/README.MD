@@ -53,14 +53,18 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
     kubectl create -f configmap-css-additional.yml
 ```
 - Let's make sure it's been created :
-
+``` shell
     kubectl get configmaps
-    
+```    
 - Congratulations, now we'll have to make sure to declare our configmap volume in our deployment : 
 -- Retrieve the deployment you have used in the past :
-
+``` shell
     kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment.yml
+```
 
+- Add a volume and volumeMount based on the following official documentation : Read [Populate a Volume with data stored in a ConfigMap
+](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#populate-a-volume-with-data-stored-in-a-configmap)
+- mountPath must match : /usr/src/app/static/css/css-additional
 --- 
 | CHARACTER | SHORTCUT | USAGE |
 |--|--|--|

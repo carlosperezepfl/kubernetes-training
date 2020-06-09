@@ -27,6 +27,8 @@ And that's where **configMaps** come in.
  
 It's time to create our first configMap :
 
+![configmap-example](./img/03-configmap.gif)
+
 ### Creating a ConfigMap :
 
 The goal here will be to set up a configmap that will feed a css stylesheet that will override the style of your future application.

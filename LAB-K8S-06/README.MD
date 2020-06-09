@@ -65,6 +65,21 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 - Add a volume and volumeMount based on the following official documentation : Read | [Populate a Volume with data stored in a ConfigMap
 ](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#populate-a-volume-with-data-stored-in-a-configmap)
 > mountPath must match : /usr/src/app/static/css/css-additional
+
+- Once finished, apply the new configuration of your deployment :
+
+``` shell
+    $ kubectl apply -f my-todo-deployment.yml
+```
+- A little routine check :
+
+``` shell
+    $ kubectl get deployments -o wide -w
+```
+
+``` shell
+    $ kubectl get pods -o wide -w
+```
 --- 
 | CHARACTER | SHORTCUT | USAGE |
 |--|--|--|

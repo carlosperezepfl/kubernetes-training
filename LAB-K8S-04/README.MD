@@ -29,12 +29,10 @@ At the end of this lab, each participant will have:*
 - Open https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/#creating-a-service and read the example Service specification.
 
 - Create a Service inside your namespace that will match the following specifications (solution here) :
-
- - Specifications : 
-  - name: --> service-my-todo-list
-  - selector: --> app: my-todo-list
-  - port: --> 80
-  - targetPort: --> 8080
+  - name --> service-my-todo-list
+  - selector --> app: my-todo-list
+  - port --> 80
+  - targetPort --> 8080
   
 
 -   As a first step, before creating our first service, we will inspect the service.yaml file with the :

@@ -55,7 +55,8 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
     $ kubectl get configmaps
 ```    
 - Congratulations, now we'll have to make sure to declare our configmap volume in our deployment : 
--- Retrieve the deployment you have used in the past :
+
+ - Retrieve the deployment you have used in the past :
 ``` shell
     $ kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment.yml
 ```

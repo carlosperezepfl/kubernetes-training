@@ -101,14 +101,14 @@ data:
     $ kubectl get configmaps
 ```
 
-### Creating a new deployment :
+### Creating a new deployment (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/04-simple-todo-pod-deployment-configmap-env.yml)) :
 
  - Retrieve the deployment you have used in the past :
 ``` shell
     $ kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment.yml
 ```
 
-- Add the following two environment variables (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/04-simple-todo-pod-deployment-configmap-env.yml)) :
+- Add the following two environment variables :
 
 	- SW_HERO with key FAVORITE_SW_HERO
 	- SW_MOVIE with keu FAVORITE_SW_MOVIE

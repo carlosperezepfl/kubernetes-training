@@ -79,7 +79,10 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 ``` shell
     $ kubectl get pods -o wide -w
 ```
+
+- Let's go to the next step :
 --- 
+
 | CHARACTER | SHORTCUT | USAGE |
 |--|--|--|
 | > | MAJ + < | Single-line format |

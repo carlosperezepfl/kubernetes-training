@@ -6,18 +6,16 @@
 
 ## Goals
 
-*List the goals using bullet point per goal, eg:
-
 At the end of this lab, each participant will have:*
-
-- Creating and editing a Service Object.
-
-- Synthax errors debugging.
+- Created and edited a Service Object.
 
 
 ## Prerequisites
 
  - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
+
+---
+## Overview
 
 ![Arch](./img/00-service.png)
 
@@ -36,7 +34,7 @@ $ cat /LAB-K8S-04-services/service.yaml
 $ vim service.yaml
 ```
 ---
-> **TIPS:** The **YAML** is used for configuration files :
+> :bulb: **YAML for configuration files**
 > Don't forget that .yaml files have the particularity of having an indentation exclusively with **spaces** and not **tabulations**.
 ---
 | TYPES | USAGES |

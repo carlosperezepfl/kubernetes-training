@@ -153,8 +153,9 @@ kubectl delete pod welcome
 ----
 ## Creating your first POD
 
->**Tips 1 :** Declarative vs Imperative :
-> **Declarative :** Description of a desired state, the system (Docker, Kubernetes ...) will try to reach this state in time. 
+> :bulb: **Declarative vs Imperative**
+>
+>  **Declarative :** Description of a desired state, the system (Docker, Kubernetes ...) will try to reach this state in time. 
 > **Imperative/Procedurale :** Control of the final state.
 
 Example of the imperative/procedural command use to deploy a pod :

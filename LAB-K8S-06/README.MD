@@ -17,8 +17,8 @@ At the end of this laboratory, each participant will be able to set up a configM
 ---
 
 ## Trouble with the force
-- :white_check_mark: Look at your application using your landing zone, eg: https://sokube-k8s-training.hidora.com/tatooine
-- :white_check_mark: Is it still running ? 
+-
+-
 
 ---
 ## ConfigMap
@@ -45,8 +45,6 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 
 	- name is configmap-css-additionnal
 	- data with content :
-	
-Â
 
     css-additional.css: |
     .navbar {

@@ -44,7 +44,7 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 - Specifications : 
 
 	- name is configmap-css-additionnal
-	- data with content :
+	- data with content (You can change it in *style* later) :
 
 ![content-configmap](./img/02-configmap.png)
 

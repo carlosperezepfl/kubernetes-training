@@ -108,7 +108,21 @@ No resources found in tatooine namespace.
 **:cocktail: Congratulations, your lab environment is ready ! :cocktail:**
 
 ---
+## Labs material
+The labs material is accessible on github: https://github.com/sokube/kubernetes-training
 
+You can clone the content with git:
+``` shell
+git clone git@github.com:sokube/kubernetes-training.git
+```
+Or download it as a [ZIP file](https://github.com/sokube/kubernetes-training/archive/master.zip) and uncompress it locally
+
+---
+## Kubernetes Documentation
+
+The instructor will show you briefly how to use the reference documentation for kubernetes: https://kubernetes.io/docs/home/
+
+---
 ## Quiz
 
 - Give a quick look at the configuration file that has been provided and identify the various clusters, users and context information.

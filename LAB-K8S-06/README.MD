@@ -49,9 +49,9 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 ![content-configmap](./img/02-configmap.png)
 
 - Deploy this newly created file : 
-
+``` shell
     kubectl create -f configmap-css-additional.yml
-
+```
 - Let's make sure it's been created :
 
     kubectl get configmaps

@@ -28,13 +28,39 @@ At the end of this lab, each participant will have:*
 
 - Open https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/#creating-a-service and read the example Service specification.
 
+>**Tips 1 :** Save your file with :
+```
+:wq
+```
+
+>**Tips 2 :** To enable line numbers on the vim editor, just enter :
+
+```
+:set nu + enter
+```
+---
+
 - Create a Service inside your namespace that will match the following specifications (solution here) :
   - name --> service-my-todo-list
   - selector --> app: my-todo-list
+  - type --> ClusterIP
   - port --> 80
   - targetPort --> 8080
   
+> **TIPS:** The **YAML** is used for configuration files :
+> Don't forget that .yaml files have the particularity of having an indentation exclusively with **spaces** and not **tabulations**.
+---
+| TYPES | USAGES |
+|--|--|
+| ClusterIP | Expose the service on an internal ip (default type) |
+| NodePort | Expose the service on the IP of each node |
+| LoadBalancing | The process of efficiently distributing network traffic between multiple services |
 
+---
+
+
+
+--- ///
 -   As a first step, before creating our first service, we will inspect the service.yaml file with the :
     
     
@@ -48,31 +74,10 @@ $ cat /LAB-K8S-04-services/service.yaml
 $ vim service.yaml
 ```
 ---
-> **TIPS:** The **YAML** is used for configuration files :
-> Don't forget that .yaml files have the particularity of having an indentation exclusively with **spaces** and not **tabulations**.
----
-| TYPES | USAGES |
-|--|--|
-| ClusterIP | Expose the service on an internal ip (default type) |
-| NodePort | Expose the service on the IP of each node |
-| LoadBalancing | The process of efficiently distributing network traffic between multiple services |
 
----
 -   Your file should look like the file below :
     
 
-
->**Tips 1 :** Save your file with :
-```
-:wq
-```
-
->**Tips 2 :** To enable line numbers on the vim editor, just enter :
-
-```
-:set nu + enter
-```
----
 -   **Well Done !** It's time to deploy this service :
     
 

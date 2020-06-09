@@ -1,44 +1,89 @@
 
-.navbar {
-   background-color: none;
-   color: white;
-}
 
-# LAB-K8S-06: ConfigMap
+# LAB-K8S-05: Deployment
 
-**Description**: *Put the description here*
+**Description**: In this lab, participants will learn how to use ConfigMap, as a first step, a configMap (css file) that will overwrite the existing files, 
 
-**Duration**: *Insert the estimated duration, eg: ±20m*
+**Duration**: ±40m
 
 ## Goals
-*List the goals using bullet point per goal, eg:
-At the end of this lab, each participant will have:*
-*- a working local environment to perform the k8s labs on a remote k8s cluster, inside its own namespace.*
-*- a working local environment to perform the k8s labs on a remote k8s cluster, inside its own namespace.*
+At the end of this laboratory, each participant will be able to set up a configMap and its volume to simply modify configurations such as for example a virtual host, an application configuration file etc...
 
 ## Prerequisites
-*List prerequisites using bullet point per goal, eg:*
-*- Each participant has received personal pre-generated kubectl config file by email and the name of the corresponding **namespace***
-*- A laptop or station with Windows, MacOS or Linux and a working Internet connection are necessary.*
+ - [LAB-K8S-01 - Basic Setup](../LAB-K8S-01/README.MD)
+ - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
+ - [LAB-K8S-04 - PODs](../LAB-K8S-03/README.MD)
+ - [LAB-K8S-05 - PODs](../LAB-K8S-05/README.MD)
+---
 
-----
+## Trouble with the force
+- :white_check_mark: Look at your application using your landing zone, eg: https://sokube-k8s-training.hidora.com/tatooine
+- :white_check_mark: Is it still running ? 
 
-## Chapter
- 
-- Step 1
+---
+## ConfigMap
+When you start developping/integrating an application, what a pleasure to be able to modify parameters in one or more configuration files without having to completely rebuild an image.
 
-``` shell 
-shell command
-``` 
+A traditional approach is to decorrelate application code from its configuration. (key/value)
 
-- Step 2:
+And that's where **configMaps** come in.
 
-## Chapter
- 
-- Step 1
+>**WARN :** A configMap must not contain sensitive data.
 
-``` shell 
-shell command
-``` 
+ - Read [Concepts - ConfigMaps]([https://kubernetes.io/docs/concepts/configuration/configmap/](https://kubernetes.io/docs/concepts/configuration/configmap/))
 
-- Step 2:
+It's time to create our first configMap :
+
+### Creating a ConfigMap :
+
+The goal here will be to set up a configmap that will feed a css stylesheet that will override the style of your future application.
+
+- Open [https://kubernetes.io/docs/concepts/configuration/configmap/#configmaps-and-pods](https://kubernetes.io/docs/concepts/configuration/configmap/#configmaps-and-pods) and read the example configMap specification.
+
+- Create a  **configMap**  inside your namespace that will match the following specifications (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/)) :
+- Specifications : 
+
+	- name is configmap-css-additionnal
+	- data with content :
+	
+Â
+
+    css-additional.css: |
+    .navbar {
+        background-color: none;
+        color: white;
+        }
+
+--- 
+| CHARACTER | SHORTCUT | USAGE |
+|--|--|--|
+| > | MAJ + < | Single-line format |
+| \| | ALT-G + 6 | Multi-line format |
+
+Examples : 
+
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: example
+      labels:
+        app: example
+    data:
+      example-single-line.yml: > Single-line example
+	
+    ---
+    
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: example-multi-line
+      labels:
+        app: example-multi-line
+    data:
+      example-multi-line.yml: | 
+	  key1:
+	    value1: 'example1'
+	  key2:
+	    value2: 'example1'
+	  
+---

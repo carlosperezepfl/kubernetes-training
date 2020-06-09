@@ -6,8 +6,7 @@ metadata:
     app: simple-todo
 data:
   css-additional.css: |
-    # css_additional example
     .navbar { 
-      background-color: none; ### Change this value & delete pod 
-      color: white; 
+       background-color: none;
+       color: white; 
     }

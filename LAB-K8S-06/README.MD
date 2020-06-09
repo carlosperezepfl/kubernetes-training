@@ -46,11 +46,7 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 	- name is configmap-css-additionnal
 	- data with content :
 
-    css-additional.css: |
-    .navbar {
-        background-color: none;
-        color: white;
-        }
+![content-configmap](./img/02-configmap.png)
 
 --- 
 | CHARACTER | SHORTCUT | USAGE |

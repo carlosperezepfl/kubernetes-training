@@ -126,7 +126,9 @@ data:
 | USAGES | EXAMPLES |
 |--|--|
 | --from-literal | sw.parameters.hero: 'Dark Vador!' |
-| --from-file | sw.parameters.file: \|-  sw.parameters.hero.1 = 'Dark Vador!' sw.parameters.hero.2 = 'Luke' |
+| --from-file | sw.parameters.file: \|-  
+sw.parameters.hero.1 = 'Dark Vador!' 
+sw.parameters.hero.2 = 'Luke' |
 
 | CHARACTER | SHORTCUT | USAGE |
 |--|--|--|

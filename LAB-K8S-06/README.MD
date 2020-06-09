@@ -81,6 +81,10 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 ```
 
 - Let's go to the next step :
+- We want to change a parameter of our NodeJS application by passing it through an environment variable, that's what we're going to do from now on :
+
+
+
 --- 
 
 | CHARACTER | SHORTCUT | USAGE |

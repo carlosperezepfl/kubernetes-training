@@ -6,17 +6,34 @@ metadata:
   namespace: <YOURNAMESPACE>
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
   template:
     metadata:
       labels:
-        app: postgres
+        postgres-service
     spec:
       containers:
         - name: postgres
-          image: postgres:10.4-alpine
+          image: postgres:12.3-alpine
           imagePullPolicy: "Always"
           ports:
             - containerPort: 5432
-          envFrom:
-            - configMapRef:
-                name: postgres-config
+          env:
+          - name: POSTGRES_DB
+            valueFrom:
+              secretKeyRef:
+                name: postgres-secret
+                key: database-name
+          - name: POSTGRES_USER
+            valueFrom:
+              secretKeyRef:
+                name: postgres-secret
+                key: database-user
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: postgres-secret
+                key: database-password
+    

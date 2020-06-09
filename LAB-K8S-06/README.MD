@@ -48,6 +48,19 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 
 ![content-configmap](./img/02-configmap.png)
 
+- Deploy this newly created file : 
+
+    kubectl create -f configmap-css-additional.yml
+
+- Let's make sure it's been created :
+
+    kubectl get configmaps
+    
+- Congratulations, now we'll have to make sure to declare our configmap volume in our deployment : 
+-- Retrieve the deployment you have used in the past :
+
+    kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment.yml
+
 --- 
 | CHARACTER | SHORTCUT | USAGE |
 |--|--|--|

@@ -12,7 +12,7 @@ At the end of this laboratory, each participant will be able to set up a configM
 ## Prerequisites
  - [LAB-K8S-01 - Basic Setup](../LAB-K8S-01/README.MD)
  - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
- - [LAB-K8S-04 - Services](../LAB-K8S-03/README.MD)
+ - [LAB-K8S-04 - Services](../LAB-K8S-04/README.MD)
  - [LAB-K8S-05 - Deployments](../LAB-K8S-05/README.MD)
 ---
 

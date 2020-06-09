@@ -30,8 +30,8 @@ And that's where **configMaps** come in.
 
 >**WARN :** A configMap must not contain sensitive data.
 
- - Read [Concepts - ConfigMaps]([https://kubernetes.io/docs/concepts/configuration/configmap/](https://kubernetes.io/docs/concepts/configuration/configmap/))
-
+ - Read [Concepts - ConfigMaps](https://kubernetes.io/docs/concepts/configuration/configmap/)
+ 
 It's time to create our first configMap :
 
 ### Creating a ConfigMap :

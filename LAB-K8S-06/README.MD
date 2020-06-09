@@ -121,6 +121,7 @@ data:
 
 - Congratulations, that's it for the configMaps, let's move on to Secrets.
 --- 
+> **TIPS :**
 
 | CHARACTER | SHORTCUT | USAGE |
 |--|--|--|

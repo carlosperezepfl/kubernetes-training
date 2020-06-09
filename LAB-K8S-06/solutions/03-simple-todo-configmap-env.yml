@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-env
+data:
+  FAVORITE_SW_HERO: "Dark Vador"
+  FAVORITE_SW_MOVIE: "..."

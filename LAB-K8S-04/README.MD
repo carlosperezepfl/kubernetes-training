@@ -57,41 +57,37 @@ At the end of this lab, each participant will have:*
 | LoadBalancing | The process of efficiently distributing network traffic between multiple services |
 
 ---
-
-
-
---- ///
--   As a first step, before creating our first service, we will inspect the service.yaml file with the :
+  
+- Deploy this newly created file :
+    $ kubectl create -f service-my-todo-list.yml
     
+- Let's make sure it was created :
+    $ kubectl get services
     
+- Congratulations, but it's not over yet. That would have been too simple. It turns out that in a hurry, we deployed a service that didn't seem to work... I'll let you see that.
+       
 ```
-$ cat /LAB-K8S-04-services/service.yaml
+$ cat /LAB-K8S-04-services/service-with-bugs.yml
 ```
 
--   In this second step, we will edit this file with vim to specify the type of service we want (ClusterIP) :
+-  It's a trap... A real storm came through here... Correct all these mistakes!
     
 ```
-$ vim service.yaml
+$ vim service.yml
 ```
+
+```
+$ mv service-with-bugs.yml service.yml
+```
+
 ---
 
--   Your file should look like the file below :
-    
-
--   **Well Done !** It's time to deploy this service :
+-  **Well Done !** It's time to deploy this service :
     
 
 ```
 kubectl create -f service.yaml
 ```
-
--   It’s a **TRAP** ! Or **NOT**, there's just "one" more thing missing (**Read terminal returns**) 
-
-You can also take a look at this image and make a comparison of your description file :
-    
-![Plan](./img/02-service.png)
-
--   What do you think ? (Find errors, fix them and create a new kubectl -f service.yaml)
 
 -   Let's go see if everything went well :
     
@@ -100,3 +96,4 @@ kubectl get services
 ```
 
 ![Get service](./img/04-service.png)
+

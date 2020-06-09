@@ -78,7 +78,14 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 ```
 
 - Let's go to the next step :
-- We would like to add two parameters to our NodeJS application to highlight our favorite Star wars character and movie. 🔥 "Let's go Chewie !" 🔥 :
+- We'd like to add some parameters to our NodeJS application to highlight our planet's assets (namespace name), 🔥 "Let's go Chewie!" 🔥 :
+
+- Browse this link and look for the following information: https://swapi.dev/api/planets/
+	- Planet name
+	- Climate
+	- Terrain
+	- Population
+	- Name of a resident of this planet
 
 - As a first step, refer to the official documentation : Read | [Use ConfigMap-defined environment variables in Pod commands
 ](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#use-configmap-defined-environment-variables-in-pod-commands)
@@ -86,11 +93,14 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 ### Creating a new configMap (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/03-simple-todo-configmap-env.yml)) : 
 
 - name is configmap-env
-- data with content :
+- data with content (https://swapi.dev/api/planets/) :
 ``` shell
 data:
-  FAVORITE_SW_HERO: "Dark Vador"
-  FAVORITE_SW_MOVIE: "..."
+  INFO_PLANET: "Tatooine"
+  INFO_CLIMATE: "Arid"
+  INFO_TERRAIN: "Desert"
+  INFO_POPULATION: "200000"
+  INFO_RESIDENT: "Beru Whitesun lars"
 ```
 
 - Deploy this newly created file : 
@@ -110,10 +120,13 @@ data:
     $ kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment.yml
 ```
 
-- Add the following two environment variables :
+- Add the following environment variables (SW_*) :
 
-	- SW_HERO with key FAVORITE_SW_HERO
-	- SW_MOVIE with keu FAVORITE_SW_MOVIE
+	- SW_PLANET with key INFO_PLANET
+	- SW_CLIMATE with key INFO_CLIMATE
+	- SW_TERRAIN with key INFO_TERRAIN
+	- SW_POPULATION with key INFO_POPULATION
+	- SW_RESIDENT with key INFO_RESIDENT
 	
 - Let's apply our changes ! 
 

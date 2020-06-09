@@ -16,7 +16,7 @@ At the end of this lab, each participant will have:*
 
 
 ## Prerequisites
-
+ - [LAB-K8S-01 - Basic Setup](../LAB-K8S-01/README.MD)
  - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
 
 ![Arch](./img/00-service.png)

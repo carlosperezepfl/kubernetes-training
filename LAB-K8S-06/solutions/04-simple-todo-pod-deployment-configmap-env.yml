@@ -17,16 +17,31 @@ spec:
         - name: my-simple-todolist
           image: mowhank/simple-todo-list:1.0.1
           env:
-            - name: SW_HERO
+            - name: SW_PLANET
               valueFrom:
                 configMapKeyRef:
                   name: configmap-env
-                  key: FAVORITE_SW_HERO
-            - name: SW_MOVIE
+                  key: INFO_PLANET
+            - name: SW_CLIMATE
               valueFrom:
                 configMapKeyRef:
                   name: configmap-env
-                  key: FAVORITE_SW_MOVIE
+                  key: INFO_CLIMATE
+            - name: SW_TERRAIN
+              valueFrom:
+                configMapKeyRef:                                              
+                  name: configmap-env                                         
+                  key: INFO_TERRAIN
+            - name: SW_POPULATION
+              valueFrom:
+                configMapKeyRef:                                              
+                  name: configmap-env                                         
+                  key: INFO_POPULATION
+            - name: SW_RESIDENT
+              valueFrom:
+                configMapKeyRef:                                              
+                  name: configmap-env                                         
+                  key: INFO_RESIDENT
           ports:
           - containerPort: 8080
           livenessProbe:

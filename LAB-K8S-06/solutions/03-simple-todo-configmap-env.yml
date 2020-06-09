@@ -3,5 +3,8 @@ kind: ConfigMap
 metadata:
   name: configmap-env
 data:
-  FAVORITE_SW_HERO: "Dark Vador"
-  FAVORITE_SW_MOVIE: "..."
+  INFO_PLANET: "Tatooine"
+  INFO_CLIMATE: "Arid"
+  INFO_TERRAIN: "Desert"
+  INFO_POPULATION: "200000"
+  INFO_RESIDENT: "Beru Whitesun lars"

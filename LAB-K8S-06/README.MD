@@ -1,5 +1,7 @@
 # LAB-K8S-06: ConfigMaps
 
+⚠️ MODIFICATION IMAGE + CONFIGMAPENV + RELECTURE A FAIRE + TESTS A FAIRE ⚠️
+
 **Description**: In this lab, participants will learn how to use ConfigMap, as a first step, a configMap (css file) that will overwrite the existing files.
 
 **Duration**: ±40m

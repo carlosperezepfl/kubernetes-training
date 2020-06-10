@@ -16,9 +16,9 @@ spec:
       containers:
         - name: my-simple-todolist
           image: mowhank/simple-todo-list:1.0.1
-          env:
-            - name: ORG
-              value: <YOURNAMESPACE>
+          envFrom:
+            - configMapRef:
+                name: configmap-multiple-env
           ports:
           - containerPort: 8080
           livenessProbe:
@@ -28,10 +28,3 @@ spec:
             periodSeconds: 5
             initialDelaySeconds: 5
             timeoutSeconds: 1
-          volumeMounts:
-            - mountPath: "/usr/src/app/static/css/css-additional"
-              name: configmap-css-additional
-      volumes:
-        - configMap:
-            name: configmap-css-additional
-          name: configmap-css-additional

@@ -34,13 +34,13 @@ From the documentation:
 In a :fire: **hurry** :fire:  and while the issue is investigated, our application developers have introduced a **new HTTP REST** endpoint (available at **/health**) in the application to allow for an external probe.
 
 - :white_check_mark: Read [Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-a-liveness-http-request)
-- :white_check_mark: Update the image  of your POD to **sokubedocker/simple-todo:1.1**, using the **declarative** method (remember we used a YAML in [LAB-K8S-02](../LAB-K8S-02/README.MD)). **Solution** [here](./solutions/simple-todo-pod-emergency.yaml).
+- :white_check_mark: Update the image  of your POD to **sokubedocker/simple-todo:1.1**, using the **declarative** method (remember we used a YAML in [LAB-K8S-02](../LAB-K8S-02/README.MD)). **Solution** [here](./solutions/simple-todo-pod-emergency.yml).
 
 - :white_check_mark: Try the new application new REST service with your landing zone's URL, eg: https://sokube-k8s-training.hidora.com/tatooine/health, what is it answering ?
 
 Let's use what we've learned about **liveness probes** and implement one leveraging this new REST endpoint.
 
-- :white_check_mark: Complement the previous POD declaration with the liveness probe specs below and apply it. **Solution** [here](./solutions/simple-todo-pod-liveness.yaml). Try your new application.
+- :white_check_mark: Complement the previous POD declaration with the liveness probe specs below and apply it. **Solution** [here](./solutions/simple-todo-pod-liveness.yml). Try your new application.
 
 >- The check is done periodically **every 5s**
 >- The HTTP url to use is **/health** on **port 8080**
@@ -71,7 +71,7 @@ First, let's **cleanup** our environment:
 
 :white_check_mark: Open https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#creating-a-deployment and read the example deployment specification.
 
-:white_check_mark: Create a **deployment** inside your namespace that will match the following specifications (**solution** [here](./solutions/simple-todo-pod-deployment.yaml)) :
+:white_check_mark: Create a **deployment** inside your namespace that will match the following specifications (**solution** [here](./solutions/simple-todo-pod-deployment.yml)) :
 
   >  - **name** is my-todo-deployment
   > - 1 replica of a POD that has the label **app:simple-todo**
@@ -95,14 +95,14 @@ Look at the **Ready** column:
 - :white_check_mark: How many POD's should the deployment have?
 - :white_check_mark: How many are **ready** ?
 
-Go to your landing zone URL, eg: https://sokube-k8s-training.hidora.com/tatooine/.
+Go to your landing zone URL, eg: https://sokube-k8s-training.hidora.com/YOURNAMESPACE/.
   - :white_check_mark: Look at the footer section. What has changed in the **hostname** ?
 ----
 ## Upgrades and rollbacks
 
 Development is going full speed and our team has come up with a much awaited feature: *completion for tasks*. They've just released version 2.0. We'll use our deployment to perform an upgrade to this version.
 
-- :white_check_mark: Modify the previous deployment declaration and update the image to **sokubedocker/simple-todo:2.0** (**solution** [here](./solutions/simple-todo-pod-deployment-newfeature.yaml))
+- :white_check_mark: Modify the previous deployment declaration and update the image to **sokubedocker/simple-todo:2.0** (**solution** [here](./solutions/simple-todo-pod-deployment-newfeature.yml))
 
 - :white_check_mark: Check the status of our **deployment** object:
 ``` shell
@@ -113,7 +113,7 @@ kubectl rollout status deployment my-app-deployment
 kubectl rollout history deployment my-app-deployment
 ``` 
 
-Go to your landing zone URL, eg: https://sokube-k8s-training.hidora.com/tatooine/, and play a bit with the new completion feature. Imagine that this version contains a major issue and we need to revert to the previous 1.1 version. 
+Go to your landing zone URL, eg: https://sokube-k8s-training.hidora.com/YOURNAMESPACE/, and play a bit with the new tasks completion feature. Imagine that this version contains a major issue and we need to revert to the previous 1.1 version. 
   - :white_check_mark: Perform a deployment rollback:
 ``` shell
 kubectl rollout undo deployment my-app-deployment
@@ -125,7 +125,7 @@ One of the roles of the **Deployment** object (and the controller that handles i
 
 In the meantime our todo application is gaining attention and more and more users start to leverage it. Our application **still being affected by the unresponsiveness issue**, we got couple of customers who have been noticing out-of-service response by our application (while it was restarting). We want to make sure we have **permanently 2 instances** of the application running.
 
-- :white_check_mark: Modify the **replicas** field in the deployment YAML to have permanently 2 instances of our application in version 1.1 (**solution** [here](./solutions/simple-todo-pod-deployment-scaling.yaml))
+- :white_check_mark: Modify the **replicas** field in the deployment YAML to have permanently 2 instances of our application in version 1.1 (**solution** [here](./solutions/simple-todo-pod-deployment-scaling.yml))
 
 Look at the footer section and perform couple of browsers refresh... 
 - :white_check_mark: What is changing in the **hostname** ?

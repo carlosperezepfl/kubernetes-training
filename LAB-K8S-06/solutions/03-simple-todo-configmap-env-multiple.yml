@@ -2,7 +2,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: configmap-multiple-env
-  namespace: <YOURNAMESPACE>
 data:
   SW_PLANET: "TBD"
   SW_CLIMATE: "TBD"

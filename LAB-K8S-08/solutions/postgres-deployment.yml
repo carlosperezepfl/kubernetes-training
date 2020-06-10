@@ -3,7 +3,6 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: todo-database
-  namespace: <YOURNAMESPACE>
 spec:
   replicas: 1
   selector:

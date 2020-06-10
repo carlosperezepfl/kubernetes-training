@@ -1,14 +1,13 @@
 # LAB-K8S-07: Secrets
 
+**Description**: In this lab, participants will learn how to create and use **Secrets**.
 
-:warning: ADAPTER SOLUTIONS AUX CHANGEMENTS CONFIGMAPENV + RELECTURE A FAIRE + TESTS A FAIRE :warning:
-
-**Description**: In this lab, participants will learn how to use Secret.
-
-**Duration**: ±20m
+**Duration**: ±40m
 
 ## Goals
-At the end of this laboratory, each participant will be able to set up a Secret ...
+At the end of this laboratory, each participant will be able to_
+- Create a Secret object
+- Use the same Secret in applications
 
 ## Prerequisites
  - [LAB-K8S-01 - Basic Setup](../LAB-K8S-01/README.MD)
@@ -20,9 +19,10 @@ At the end of this laboratory, each participant will be able to set up a Secret 
 ---
 ## Secrets
 
-Secrets allow to store and manage on a model (key/value) sensitive information**, we find there most commonly passwords, OAuth token ... 
+Secrets allow to store and manage sensitive information on a (key/value) model. They are commonly used for passwords, OAuth token ... 
+Secrets objects are very similar to ConfigMaps.
 
-This approach is similar to the one we have seen for configMaps, the goal is to minimize or outlaw as much as possible the secrets in plaintext in application pods or directly in images.
+:warning: Kubernetes Secrets are **not secure** at all as they rely on base64 encoding, and should be avoided as much as possible in production environments. There are secure alternatives to native secrets, such as Hashicorp [Vault](https://www.vaultproject.io/). Such a tool setup and usage would require a dedicated lab.
 
 I've just been informed that a droid has just delivered an encoded message. 
 
@@ -30,11 +30,13 @@ I've just been informed that a droid has just delivered an encoded message.
 
 >**WARN :** Beware however, a secret is not encrypted, but simply encoded in base64, secure safe alternatives exist and MUST be used for any production-type deployment. 
 
- - Read | [Concepts - Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
+ - :white_check_mark: Read documentation on [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
  
 It's time to go and see what's in this message.
 
 Let's start by injecting it into the kube :
+
+:fire: TODO :fire: 
 
 ### Creating a Secret :
 

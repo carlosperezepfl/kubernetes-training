@@ -2,18 +2,26 @@
 
 # LAB-K8S-02: Docker
 
-**Description**: This is an environment preparation lab where participants will install and configure the base tools to prepare a working environment for the following labs.
+**Description**: This is a very brief and rapid overview of Docker in the context of Kubernetes
 
 **Duration**: ±20m
 
 ## Goals
-At the end of this lab, each participant will have:
-- a working local environment to perform the k8s labs on a remote k8s cluster, inside its own namespace.
+At the end of this lab, each participant will have the basics of Docker refreshed
 
 ## Prerequisites
 
-- Each participant has received personal pre-generated kubectl config file by email and the name of the corresponding **namespace**
-- A laptop or station with Windows, MacOS or Linux and a working Internet connection are necessary.
+- A minimum exposure to Docker
+
+----
+
+## Docker Overview
+
+![Overview](./img/docker-overview.png)
+
+Docker est une solution de containerization qui se base sur deux composants situés sur une machine hôte:
+
+- Le Docker client (exécutable docker)
 
 ----
 

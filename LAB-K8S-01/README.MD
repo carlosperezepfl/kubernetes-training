@@ -147,3 +147,6 @@ The instructor will show you briefly how to use the reference documentation for 
 Some links:
 - [kubectl overview](https://kubernetes.io/docs/reference/kubectl/overview/)
 
+## Next lab 
+
+ - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)

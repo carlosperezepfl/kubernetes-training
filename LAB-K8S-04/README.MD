@@ -1,5 +1,7 @@
 # LAB-K8S-04: Services
 
+⚠️ REVOIR CONTENU (pas convaincu et pas d'idées sur ce LAB) + RELECTURE A FAIRE + TESTS A FAIRE ⚠️
+
 **Description**: In this lab, participants will learn how to use services, get to know their different types and learn about debugging
 
 **Duration**: *±30m*

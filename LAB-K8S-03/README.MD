@@ -211,3 +211,7 @@ Our application developers have included the possibility to customize the header
 - :white_check_mark: Read the [documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) on environment variables
 
 - :white_check_mark: Modify the declaration file to include an environment variable **ORG** with the value of your namespace
+
+## Next lab
+ 
+ - [LAB-K8S-04 - Services](../LAB-K8S-04/README.MD)

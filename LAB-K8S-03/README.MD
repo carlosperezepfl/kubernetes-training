@@ -41,7 +41,7 @@ kubectl get pods -o wide
 ```
 - :white_check_mark: On what **node** is this pod running ? 
 
-#### POS details
+#### POD details
 In order to to look more thoroughly at a POD's details we need to use the kubectl *describe* command for pods.
 
 ``` shell
@@ -147,7 +147,7 @@ kubectl get pod welcome -o=yaml > welcome.yaml
 Now we can work on our own PODs, delete the welcome pod:
 
 ``` shell 
-kubectl delete pod welcome
+kubectl delete pod welcome --grace-period=0
 ``` 
 
 ----

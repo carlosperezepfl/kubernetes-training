@@ -3,6 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-todo-deployment
+  namespace: <YOURNAMESPACE>
 spec:
   replicas: 1
   selector:
@@ -15,7 +16,7 @@ spec:
     spec:
       containers:
         - name: my-simple-todolist
-          image: mowhank/simple-todo-list:1.0.1
+          image: sokubedocker/simple-todo:2.1
           env:
             - name: ORG
               valueFrom:

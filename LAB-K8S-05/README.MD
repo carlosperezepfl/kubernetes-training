@@ -42,7 +42,7 @@ Let's use what we've learned about **liveness probes** and implement one leverag
 
 - :white_check_mark: Complement the previous POD declaration with the liveness probe specs below and apply it. **Solution** [here](./solutions/simple-todo-pod-liveness.yaml). Try your new application.
 
->- The check will has to be run periodically **each 5s**
+>- The check is done periodically **every 5s**
 >- The HTTP url to use is **/health** on **port 8080**
 >- A request taking more than  **1s** means our application can be considered non-responsive, and must be restarted
 >- We want to avoid deciding liveness while the application is starting, so we'll give the application a **grace period of 5s** before starting the probe

@@ -79,7 +79,7 @@ Each participant has been assigned previously a given **namespace** on the targe
   kubectl --kubeconfig=$HOME/k8s-training/k8s-training-config version
   ```
 
-- You should have no connection error to the cluster, and both the client and server versions returned
+- You should have no connection error to the cluster, and both the **client** and **server** versions returned:
 
   ``` shell
   Client Version: version.Info{Major:"1", Minor:"16", GitVersion:"v1.16.6",

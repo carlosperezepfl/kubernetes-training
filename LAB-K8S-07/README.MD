@@ -70,7 +70,6 @@ kubectl create -f secret-transmission-2.yml
 ```  
 
 - The message is waiting within the kube. Let's make sure it gets to the Rebel Alliance. - (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-07/solutions/01-simple-todo-pod-deployment-secret-env.yml)) 
-:warning: !!! A FAIRE !!! :warning:
 
 - Add to your deployment the ENV variable for your secret :  Read | [Configurations - Using Secrets as environment variables](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
 

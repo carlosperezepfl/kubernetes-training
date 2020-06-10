@@ -55,7 +55,7 @@ www.google.com
 
 > **MENACE :** 
 
-"Please bring the Death Star plans attached to this message to {{name your planet}}" && this ascii code : 
+"Please bring the Death Star plans attached to this message to {{name your planet}}" and this ascii code (after the text) : https://raw.githubusercontent.com/sokube/kubernetes-training/master/LAB-K8S-07/death-star-ascii?token=APVZ6WC2D2U3UYR6GJZGVMC64DH7E
 
 - Encode this message and insert it in a new secret (secret-transmission-2.yml)
 

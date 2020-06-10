@@ -101,4 +101,4 @@ kubectl get services
 
  ## Next lab 
  
-  - [LAB-K8S-05 - Deployments](../LAB-K8S-05/README.MD)
+ - [LAB-K8S-05 - Deployments](../LAB-K8S-05/README.MD)

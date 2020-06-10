@@ -55,7 +55,7 @@ www.google.com
 
 > **MENACE :** 
 
-"Please bring the Death Star plans attached to this message to {{name your planet}}" and this ascii code (after the text) : https://raw.githubusercontent.com/sokube/kubernetes-training/master/LAB-K8S-07/death-star-ascii?token=APVZ6WC2D2U3UYR6GJZGVMC64DH7E
+"Please bring the Death Star plans attached to this message to {{name your planet}}" and this ascii code (after the text) : https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-07/death-star-ascii
 
 - Encode this message and insert it in a new secret (secret-transmission-2.yml)
 
@@ -70,7 +70,6 @@ kubectl create -f secret-transmission-2.yml
 ```  
 
 - The message is waiting within the kube. Let's make sure it gets to the Rebel Alliance. - (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-07/solutions/01-simple-todo-pod-deployment-secret-env.yml)) 
-:warning: !!! A FAIRE !!! :warning:
 
 - Add to your deployment the ENV variable for your secret :  Read | [Configurations - Using Secrets as environment variables](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
 

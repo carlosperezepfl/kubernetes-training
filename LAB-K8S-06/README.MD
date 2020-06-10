@@ -55,10 +55,10 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
 
  - Retrieve the deployment you have used in the past :
 ``` shell
-    $ kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment.yml
+kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment.yml
 ```
 
-- Add a volume and volumeMount based on the following official documentation : Read | [Populate a Volume with data stored in a ConfigMap
+- Add a **volume** and **volumeMount** based on the following official documentation : Read | [Populate a Volume with data stored in a ConfigMap
 ](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/#populate-a-volume-with-data-stored-in-a-configmap)
 > mountPath must match : /usr/src/app/static/css/css-additional (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-06/solutions/02-simple-todo-pod-deployment-configmap.yml)) :
 
@@ -77,7 +77,9 @@ The goal here will be to set up a configmap that will feed a css stylesheet that
     $ kubectl get pods -o wide -w
 ```
 
-- Let's go to the next step :
+#### Using ConfigMaps for multiple variables
+We've seen how to use ConfigMaps directly mounted as volumes
+- _white_check_mark: Let's go to the next step :
 - We'd like to add some parameters to our NodeJS application to highlight our planet's assets (namespace name), 🔥 "Let's go Chewie!" 🔥 :
 
 - Browse this link and look for the following information: https://swapi.dev/api/planets/

@@ -26,27 +26,27 @@ At the end of this lab, each participant will have:*
 
 - Open https://kubernetes.io/docs/concepts/services-networking/connect-applications-service/#creating-a-service and read the example Service specification.
 
->**Tips 1 :** Save your file with :
+>:bulb: **Tips:** Save your file with :
 ```
 :wq
 ```
 
->**Tips 2 :** To enable line numbers on the vim editor, just enter :
+>:bulb: **Tips:** To enable line numbers on the vim editor, just enter :
 
 ```
 :set nu + enter
 ```
 ---
 
-- Create a Service inside your namespace that will match the following specifications (solution here) :
-  - name --> service-my-todo-list
-  - selector --> app: my-todo-list
-  - type --> ClusterIP
-  - port --> 80
-  - targetPort --> 8080
+- :white_check_mark: Create a **Service** inside your namespace that will match the following specifications (solution [here](./solutions/)) :
+> name: **service-my-todo-list**
+> selector: label **app** is **my-todo-list**
+> type: **ClusterIP**
+> port: **80**
+> targetPort: **8080**
   
-> **TIPS:** The **YAML** is used for configuration files :
-> Don't forget that .yaml files have the particularity of having an indentation exclusively with **spaces** and not **tabulations**.
+> :bulb: **TIPS:** The **YAML** is used for configuration files :
+> Don't forget that .yaml files indentation is exclusively using  **spaces** and not **tabulations**.
 ---
 | TYPES | USAGES |
 |--|--|
@@ -72,11 +72,11 @@ $ cat /LAB-K8S-04-services/service-with-bugs.yml
 
 -  It's a trap... A real storm came through here... Correct all these mistakes!
     
-```
+``` shell
 $ vim service.yml
 ```
 
-```
+``` shell
 $ mv service-with-bugs.yml service.yml
 ```
 

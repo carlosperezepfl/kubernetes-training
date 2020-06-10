@@ -18,6 +18,11 @@ At the end of this lab, each participant will be able to roll-out and roll-back 
 ## Trouble with the force
 - :white_check_mark: Look at your application using your landing zone, eg: https://sokube-k8s-training.hidora.com/tatooine.
 - :white_check_mark: Is it still running ?
+- :white_check_mark: Can you diagnose what happened ?
+``` shell
+kubectl describe pod my-simple-todo-pod
+```
+- :white_check_mark: Is the application (POD) coming back ?
 
 ---
 ## Liveness Probe
@@ -35,12 +40,12 @@ In a :fire: **hurry** :fire:  and while the issue is investigated, our applicati
 
 Let's use what we've learned about **liveness probes** and implement one leveraging this new REST endpoint.
 
-- :white_check_mark: Complement the previous POD declaration with the liveness probe specs below and apply it. Try your new application. **Solution** [here](./solutions/simple-todo-pod-liveness.yaml).
+- :white_check_mark: Complement the previous POD declaration with the liveness probe specs below and apply it. **Solution** [here](./solutions/simple-todo-pod-liveness.yaml). Try your new application.
 
-  > - The check will has to be run periodically **each 5s**
-  > - The HTTP url to use is **/health** on **port 8080**
-  > - A request taking more than  **1s** means our application can be considered non-responsive, and must be restarted
-  >  - We want to avoid deciding liveness while the application is starting, so we'll give the application a **grace period of 5s** before starting the probe
+>- The check will has to be run periodically **each 5s**
+>- The HTTP url to use is **/health** on **port 8080**
+>- A request taking more than  **1s** means our application can be considered non-responsive, and must be restarted
+>- We want to avoid deciding liveness while the application is starting, so we'll give the application a **grace period of 5s** before starting the probe
 
 Is our **liveness probe** solving the problem ? The instructor will remotely have your application suddenly slow unexpectedly.
 
@@ -114,7 +119,7 @@ Go to your landing zone URL, eg: https://sokube-k8s-training.hidora.com/tatooine
 kubectl rollout undo deployment my-app-deployment
 ``` 
 ----
-## Scaling
+## Scaling with PODs
 
 One of the roles of the **Deployment** object (and the controller that handles it) is to maintain a desired number of PODs (called replicas). 
 

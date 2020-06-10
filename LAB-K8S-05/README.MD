@@ -131,3 +131,7 @@ Look at the footer section and perform couple of browsers refresh...
 - :white_check_mark: What is changing in the **hostname** ?
 - :white_check_mark: Try to modify the todo list, and perform some refreshes. What is the main **architectural problem** of our solution ? (tip: stateless applications vs stateful applications)
 - :white_check_mark: Scale down the application **to 1 replica with  version 2.0** while we revisit the architecture to address the stateless problem of our application
+
+## Next lab
+
+ - [LAB-K8S-06 - ConfigMaps](../LAB-K8S-06/README.MD)

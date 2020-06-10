@@ -75,7 +75,7 @@ www.google.com
 
 > TIPS: Export your old deployment and simply add the new entries. | kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment-with-secret-env.yml
 
-- Let us also make sure that the secret cannot be changed, but can be read by our operators ! Read | [Configurations - Immutable](https://kubernetes.io/docs/concepts/configuration/secret/#mounted-secrets-are-updated-automatically) && [Configurations - Secret files permissions](https://kubernetes.io/docs/concepts/configuration/secret/#secret-files-permissions)
+- Let us also make sure that the secret cannot be changed ! Read | [Configurations - Secret files permissions](https://kubernetes.io/docs/concepts/configuration/secret/#secret-files-permissions)
 
 - 🔥 Send the message, now! The Empire fleet is approaching! 🔥
   ``` shell

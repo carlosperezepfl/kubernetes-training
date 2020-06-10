@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+  labels:
+    name: my-app-example-2
+spec:
+  containers:
+  - name: debug
+    command:
+      - sleep
+      - "3600"
+    image: mowhank/debug:1.0.1
+    ports:
+      - containerPort: 8080

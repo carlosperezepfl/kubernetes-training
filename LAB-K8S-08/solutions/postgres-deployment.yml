@@ -1,5 +1,5 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-database
@@ -11,11 +11,11 @@ spec:
   template:
     metadata:
       labels:
-        postgres-service
+        app: postgres
     spec:
       containers:
         - name: postgres
-          image: postgres:12.3-alpine
+          image: postgres:10.4-alpine
           imagePullPolicy: "Always"
           ports:
             - containerPort: 5432

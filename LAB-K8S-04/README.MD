@@ -1,7 +1,5 @@
 # LAB-K8S-04: Services
 
-⚠️ REVOIR CONTENU (pas convaincu et pas d'idées sur ce LAB) + RELECTURE A FAIRE + TESTS A FAIRE ⚠️
-
 **Description**: In this lab, participants will learn how to use services, get to know their different types and learn about debugging
 
 **Duration**: *±30m*
@@ -91,11 +89,35 @@ $ mv service-with-bugs.yml service.yml
 kubectl create -f service.yaml
 ```
 
--   Let's go see if everything went well :
-    
+- Or it is also possible to expose your pod in this way :
+
 ```
-kubectl get services
+kubectl expose pod my-app-example-2 --port=80
 ```
+
+- Let's take a closer look at our service :
+
+```
+kubectl describe svc my-app-example-2
+```
+
+Let's test the connection to our pod with the curl command :
+
+```
+kubectl apply -f debug-pod.yml
+```
+
+```
+kubectl exec debug -it /bin/sh
+```
+
+```
+$ curl IP + 80
+```
+
+- You should get the default Nginx page in response to
+
+- Congratulations
 
 ![Get service](./img/04-service.png)
 

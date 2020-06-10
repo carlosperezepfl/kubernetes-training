@@ -197,3 +197,7 @@ Examples :
 	    value2: 'example1'
 	  
 ---
+
+## Next lab
+
+- [LAB-K8S-07 - Secrets](../LAB-K8S-07/README.MD)

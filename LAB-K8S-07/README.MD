@@ -1,7 +1,7 @@
 # LAB-K8S-07: Secrets
 
 
-:warning: RELECTURE A FAIRE + TESTS A FAIRE :warning:
+:warning: ADAPTER SOLUTIONS AUX CHANGEMENTS CONFIGMAPENV + RELECTURE A FAIRE + TESTS A FAIRE :warning:
 
 **Description**: In this lab, participants will learn how to use Secret.
 

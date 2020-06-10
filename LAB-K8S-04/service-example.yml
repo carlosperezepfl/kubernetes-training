@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-my-app
+  name: my-app-example-2
+  labels:
+    app: my-app-example-2
 spec:
-  selector:
-    app: my-app
   type: ClusterIP
-  ports:
-  - name: http
-    port: 80
-    targetPort: 8080
+  selector:
+    app: my-app-example-2
+  ports: 
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080

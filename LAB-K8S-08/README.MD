@@ -17,7 +17,7 @@ At the end of this lab, each participant will have:*
 
 ----
 
-## Stateless Todo
+## A stateless todo list
 
 In the [LAB-K8S-05 - Deployment](../LAB-K8S-05/README.MD), we have seen one important limitation of our architecture for the simple todo list, that prevents us to use gracefully the scaling and services features of the kubernetes cluster: the application is not **stateless**.
 
@@ -28,15 +28,12 @@ For this task, we gonna use **Secrets** and **Deployments** to deploy this datab
 #### Deploy a PostgreSQL Database
 
 - :white_check_mark: Read the [documentation](https://hub.docker.com/_/postgres) of the PostgreSQL container image to get familiar with the **requirements**, and especially the section around **environment variables**
-- :white_check_mark: Write a **Secret** named **postgres-secret** that will define 3 variables necessary to create a working empty database
-  - database-password: \<YOUR CHOICE\>
-  - database-user: \<YOURNAMESPACE\>
-  - database-name: \<YOURNAMESPACE\>-todo-db
+- :white_check_mark: Write a **Secret** named **postgres-secret** that will define 3 variables necessary to create a working empty database:
 ``` shell
 kubectl create secret generic postgres-secret \
---from-literal=database-password=supersecret \
---from-literal=database-user=dagobah \
---from-literal=database-name=dagobah-todo-db --namespace=dagobah
+--from-literal=database-password=kenobi \
+--from-literal=database-user=obiwan \
+--from-literal=database-name=swdb
 ```
 - :white_check_mark: Create a deployment for the database, with the following requirements: (**solution** [here](./solutions/postgres-deployment.yml))
   - replica of **1 instance** only

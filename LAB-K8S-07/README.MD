@@ -84,3 +84,7 @@ kubectl create -f secret-transmission-2.yml
 ```  
 
 - We're running out of time! It's time to leave ! 
+
+## Next lab
+
+- [LAB-K8S-08 - Persistence](../LAB-K8S-08/README.MD)

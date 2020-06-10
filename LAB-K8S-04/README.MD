@@ -99,3 +99,6 @@ kubectl get services
 
 ![Get service](./img/04-service.png)
 
+ ## Next lab 
+ 
+  - [LAB-K8S-05 - Deployments](../LAB-K8S-05/README.MD)

@@ -161,7 +161,7 @@ kubectl delete pod welcome
 
 - Example of the **imperative**  command use to deploy a pod :
   ``` shell
-  kubectl run --generator=run-pod/v1 www-1 --image=hello-world:latest
+  kubectl run --generator=run-pod/v1 my-app-example --image=nginx:latest
   ```
 
 - A **declarative** approach would be to describe the desired state in a file.
@@ -170,7 +170,13 @@ kubectl delete pod welcome
   The desired state is given to the kubernetes cluster with the **apply** command:
 
    ```  shell
-   kubectl apply -f description.yml 
+   kubectl apply -f my-app-example-2.yml
+   ```
+
+- Let's delete one of the pods, the other one will serve us in a future exercise.
+
+   ```  shell
+   kubectl delete pods my-app-example
    ```
 
 ----

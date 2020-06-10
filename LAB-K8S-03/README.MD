@@ -130,25 +130,30 @@ welcome on ...........
 
 > A PodSpec has a restartPolicy field with possible values Always, OnFailure, and Never. The default value is Always. restartPolicy applies to all Containers in the Pod. restartPolicy only refers to restarts of the Containers by the kubelet on the same node. Exited Containers that are restarted by the kubelet are restarted with an exponential back-off delay (10s, 20s, 40s …) capped at five minutes, and is reset after ten minutes of successful execution.
 
-- :white_check_mark: What value in in the pod **restartPolicy**?
+- :white_check_mark: According to the definition above, and to the field **Restart Count** in the pod describe result, what values could we potentially have in the welcome pod specification ?
 - :white_check_mark: Can you confirm ? How ?
+- :white_check_mark: Run kubectl get pod -o
+
 
 #### POD as YAML
 
 - Extract the POD's in the **YAML format**, for future usage:
-
-``` shell 
-kubectl get pod welcome -o=yaml > welcome.yaml
-``` 
+  ``` shell 
+  kubectl get pod welcome -o=yaml > welcome.yaml
+  ``` 
 
 - :white_check_mark: Have a look at welcome.yaml, do you think we have only the strict minimum content necessary to create a POD here?
-
+- :white_check_mark: Now that we have the pod spec, what was the value for **restartPolicy** ?
+  ``` shell
+  grep -i restart welcome.yaml
+  ```
 #### Delete a POD
-Now we can work on our own PODs, delete the welcome pod:
+Now we can work on our own PODs
 
-``` shell 
-kubectl delete pod welcome --grace-period=0
-``` 
+- :white_check_mark: Delete the welcome pod without waiting
+  ``` shell 
+  kubectl delete pod welcome --grace-period=0
+  ``` 
 
 ----
 ## Creating your first POD
@@ -158,16 +163,14 @@ kubectl delete pod welcome --grace-period=0
 >
 >  **Declarative :** Description of a desired state, the system (Docker, Kubernetes ...) will try to reach this state in time. 
 > **Imperative/Procedural :** Control of the final state.
-
-- Example of the **imperative**  command use to deploy a pod :
+> ![pod](./img/declarative-vs-imperative.png)
+- :white_check_mark: Example of the **imperative**  command use to deploy a pod :
   ``` shell
   kubectl run --generator=run-pod/v1 my-app-example --image=nginx:latest
   ```
 
 - A **declarative** approach would be to describe the desired state in a file.
-![pod](./img/pod.png)
-
-  The desired state is given to the kubernetes cluster with the **apply** command:
+  :white_check_mark: Apply the desired state to the kubernetes cluster with the **apply** command:
 
    ```  shell
    kubectl apply -f my-app-example-2.yml
@@ -190,7 +193,7 @@ Inside your namespace, the instructor has initialized a set of kubernetes object
 - :white_check_mark: Open a browser and look at your **landing zone**: https://sokube-k8s-training.hidora.com/YOURNAMESPACE/ 
 - :white_check_mark: What do you see ?
 
-The current landing zone is actually redirecting the URL of your landing zone to a POD with the following criteria:
+The current system setup for your is actually redirecting the URL of your landing zone to a POD with the following criteria:
 > - Running on container port **8080**
 > - Having a label **app** with value **simple-todo**
 
@@ -205,18 +208,21 @@ Our application team has provided us at the last minute a **pod declaration** fi
 - :white_check_mark: Can you correct the errors in this file ? (**solution** [here](./solutions/simple-todo-pod-corrected.yml))
 
 - :white_check_mark: Reopen your langing zone and confirm you see the application
+- :white_check_mark: Explore the application and give a positive feedback to your application team for the nice job
 
 ----
 
 ## Environment variables
 
-The default landing zone todo application feels very generic and does not reflect your landing zone.
+The default landing zone todo application feels very generic and does not reflect your own landing zone.
 
-Our application developers have included the possibility to customize the header to change the owner organization of the todo application, by using the environment variable **ORG**.
+Our application developers have included the possibility to customize the header to change the owner organization of the todo application (which is **Star Wars** by default), by using the environment variable **ORG**.
 
 - :white_check_mark: Read the [documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) on environment variables
 
-- :white_check_mark: Modify the declaration file to include an environment variable **ORG** with the value of your namespace
+- :white_check_mark: Modify the POD declaration file to include an environment variable **ORG** with the value of your namespace. You might have to delete the pod and recreate it.
+
+- :white_check_mark: Confirm you now have your own customized landing zone
 
 ## Next lab
  

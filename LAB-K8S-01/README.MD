@@ -50,9 +50,15 @@ At the end of this lab, each participant will have:
   Platform:"linux/amd64"}
   ``` 
 
+- In addition, you can add the bash auto-completion (you'll need to reload a shell)
+  ``` shell
+  echo 'source <(kubectl completion bash)' >>~/.bashrc
+  ```
+
+
 ## Kubectl Introduction
 
-> The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. For a complete list of kubectl operations, see Overview of kubectl.
+> The Kubernetes command-line tool, kubectl, allows you to run commands against Kubernetes clusters. You can use kubectl to deploy applications, inspect and manage cluster resources, and view logs. 
 
 Kubectl relies on a **configuration file** that defines:
 - multiple **clusters**, with the master URL (*server*) and their root public certificate to validate their authenticity. 
@@ -99,17 +105,9 @@ Each participant has been assigned previously a given **namespace** on the targe
 
 - Test without specifying the file now, and get the cluster information
   ``` shell
-  kubectl cluster-info
+  kubectl version
   ```
-  Should return
-
-  ``` shell
-  Kubernetes master is running at https://node66447-sokube-k8s-training.hidora.com:11026
-  KubeDNS is running at https://node66447-sokube-k8s-training.hidora.com:11026/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
-  Metrics-server is running at https://node66447-sokube-k8s-training.hidora.com:11026/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
-
-  To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
-  ```
+  Should work as before
 
 **:cocktail: Congratulations, your lab environment is ready ! :cocktail:**
 
@@ -149,4 +147,4 @@ Some links:
 
 ## Next lab 
 
- - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
+ - [LAB-K8S-02 - Docker](../LAB-K8S-02/README.MD)

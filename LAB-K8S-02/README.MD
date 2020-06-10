@@ -4,7 +4,7 @@
 
 **Description**: This is a very brief and rapid overview of Docker in the context of Kubernetes
 
-**Duration**: ±20m
+**Duration**: ±30m
 
 ## Goals
 At the end of this lab, each participant will have the basics of Docker refreshed

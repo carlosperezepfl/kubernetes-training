@@ -55,7 +55,7 @@ www.google.com
 
 > **MENACE :** 
 
-"Please bring the Death Star plans attached to this message to {{name your planet}}"
+"Please bring the Death Star plans attached to this message to {{name your planet}}" && this ascii code : 
 
 - Encode this message and insert it in a new secret (secret-transmission-2.yml)
 

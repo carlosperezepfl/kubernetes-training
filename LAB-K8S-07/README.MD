@@ -1,5 +1,8 @@
 # LAB-K8S-07: Secrets
 
+
+:warning: RELECTURE A FAIRE + TESTS A FAIRE :warning:
+
 **Description**: In this lab, participants will learn how to use Secret.
 
 **Duration**: ±20m
@@ -57,7 +60,7 @@ www.google.com
 - Encode this message and insert it in a new secret (secret-transmission-2.yml)
 
 ``` shell
-kubectl create -f secret-transmission-1.yml
+kubectl create -f secret-transmission-2.yml
 ```
 
 - Let's make sure it's been created :
@@ -65,3 +68,20 @@ kubectl create -f secret-transmission-1.yml
 ``` shell
     $ kubectl get secrets
 ```  
+
+- The message is waiting within the kube. Let's make sure it gets to the Rebel Alliance. - (**solution**  [here](https://github.com/sokube/kubernetes-training/blob/master/LAB-K8S-07/solutions/01-simple-todo-pod-deployment-secret-env.yml)) 
+:warning: !!! A FAIRE !!! :warning:
+
+- Add to your deployment the ENV variable for your secret :  Read | [Configurations - Using Secrets as environment variables](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-environment-variables)
+
+> TIPS: Export your old deployment and simply add the new entries. | kubectl get deployment my-todo-deployment -o yaml > my-todo-deployment-with-secret-env.yml
+
+- Let us also make sure that the secret cannot be changed, but can be read by our operators ! Read | [Configurations - Immutable](https://kubernetes.io/docs/concepts/configuration/secret/#mounted-secrets-are-updated-automatically) && [Configurations - Secret files permissions](https://kubernetes.io/docs/concepts/configuration/secret/#secret-files-permissions)
+
+- 🔥 Send the message, now! The Empire fleet is approaching! 🔥
+
+``` shell
+    $ kubectl apply -f my-todo-deployment-with-secret-env.yml
+```  
+
+- We're running out of time! It's time to leave ! 

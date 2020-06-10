@@ -1,4 +1,4 @@
-B-K8S-07: Secrets
+# LAB-K8S-07: Secrets
 
 **Description**: In this lab, participants will learn how to use Secret.
 
@@ -13,7 +13,6 @@ At the end of this laboratory, each participant will be able to set up a Secret 
  - [LAB-K8S-04 - Services](../LAB-K8S-04/README.MD)
  - [LAB-K8S-05 - Deployments](../LAB-K8S-05/README.MD)
  - [LAB-K8S-06 - ConfigMaps](../LAB-K8S-06/README.MD)
- - 
 
 ---
 ## Secrets
@@ -36,10 +35,10 @@ Let's start by injecting it into the kube :
 
 ### Creating a Secret :
 
-- First, add the secret-transmission.yml :
-
-kubectl create -f secret-transmission.yml
-
+- First, add the secret-transmission-1.yml :
+``` shell
+kubectl create -f secret-transmission-1.yml
+```
 - Once deployed, it's time to see what's inside :
 
 - According to the reports of our "Identity" service, the encoding seems to be base64, decode it!
@@ -52,8 +51,7 @@ www.google.com
 - Congratulations, it seems we still need your services, we must convey the content of this message :
 
 > **MENACE :** 
+
 "Please bring the Death Star plans attached to this message to {{name your planet}}"
-
-
 
 - Encode this message and insert it in a new secret (secret-transmission-2.yml)

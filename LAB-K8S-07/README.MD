@@ -55,3 +55,13 @@ www.google.com
 "Please bring the Death Star plans attached to this message to {{name your planet}}"
 
 - Encode this message and insert it in a new secret (secret-transmission-2.yml)
+
+``` shell
+kubectl create -f secret-transmission-1.yml
+```
+
+- Let's make sure it's been created :
+
+``` shell
+    $ kubectl get secrets
+```  

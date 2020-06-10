@@ -4,7 +4,7 @@
 
 **Description**: This is a lab dedicated to manipulation and exploration of POD objects, where participants will get familiar with PODs inside a cluster.
 
-**Duration**: ±40m
+**Duration**: ±45m
 
 ## Goals
 At the end of this lab, each participant will have:
@@ -153,35 +153,61 @@ kubectl delete pod welcome
 ----
 ## Creating your first POD
 
+#### Declarative vs Imperative
 > :bulb: **Declarative vs Imperative**
 >
 >  **Declarative :** Description of a desired state, the system (Docker, Kubernetes ...) will try to reach this state in time. 
-> **Imperative/Procedurale :** Control of the final state.
+> **Imperative/Procedural :** Control of the final state.
 
-Example of the imperative/procedural command use to deploy a pod :
+- Example of the **imperative**  command use to deploy a pod :
+  ``` shell
+  kubectl run --generator=run-pod/v1 www-1 --image=hello-world:latest
+  ```
 
-``` shell
-kubectl run --generator=run-pod/v1 www-1 --image=hello-world:latest
-```
-
-A declarative approach would be to describe the desired state in a file.
+- A **declarative** approach would be to describe the desired state in a file.
 ![pod](./img/pod.png)
 
+  The desired state is given to the kubernetes cluster with the **apply** command:
 
-The desired state is given to the kubernetes cluster with the **apply** command:
+   ```  shell
+   kubectl apply -f description.yml 
+   ```
 
-```  shell
-kubectl apply -f description.yaml 
-```
+----
 
-Inside your landingzone, the instructor has initialized a set of kubernetes objects that will allow you to see your landing zone PODs inside a browser.
+## Explore your Landing Zone
 
-:warning: TODO :warning:
+Inside your namespace, the instructor has initialized a set of kubernetes objects that will allow you to see your namespace's applications using a browser. We won't have a look at them immediately in the labs, but it is important for you to not alter them before.
 
-- Step 1
+:warning: DO NOT ALTER the service **sokube-k8s-training-\<YOURNAMESPACE\>-landingzone-svc** in your namespace or you might not be able to see your POD :warning:
 
-``` shell 
-shell command
-``` 
+- :white_check_mark: Open a browser and look at your **landing zone**: https://sokube-k8s-training.hidora.com/YOURNAMESPACE/ 
+- :white_check_mark: What do you see ?
 
-- Step 2:
+The current landing zone is actually redirecting the URL of your landing zone to a POD with the following criteria:
+> - Running on container port **8080**
+> - Having a label **app** with value **simple-todo**
+
+- :white_check_mark: Do we have such a POD in our namespace ?
+
+Our application team has provided us at the last minute a **pod declaration** file for the application, given in the simple-todo-pod.yml file at the root of this lab.
+
+- :white_check_mark: Try to create the POD
+  ``` shell
+  kubectl create -f simple-todo-pod.yml
+  ``` 
+- :white_check_mark: Can you correct the errors in this file ? (**solution** [here](./solutions/simple-todo-pod-corrected.yml))
+
+- :white_check_mark: Reopen your langing zone and confirm you see the application
+
+----
+
+## Environment variables
+
+The default landing zone todo application feels very generic and does not reflect your landing zone.
+
+Our application developers have included the possibility to customize the header to change the owner organization of the todo application, by using the environment variable **ORG**.
+
+- :white_check_mark: Read the [documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) on environment variables
+
+- :white_check_mark: Modify the declaration file to include an environment variable **ORG** with the value of your namespace

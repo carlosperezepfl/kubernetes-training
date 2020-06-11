@@ -16,6 +16,7 @@ spec:
       containers:
         - name: my-simple-todolist
           image: sokubedocker/simple-todo:2.1
+          imagePullPolicy: "Always"
           envFrom:
             - configMapRef:
                 name: configmap-multiple-env

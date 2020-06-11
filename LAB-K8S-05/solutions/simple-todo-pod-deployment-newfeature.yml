@@ -16,6 +16,7 @@ spec:
       containers:
         - name: my-simple-todolist
           image: sokubedocker/simple-todo:2.0
+          imagePullPolicy: "Always"
           ports:
           - containerPort: 8080
           livenessProbe:

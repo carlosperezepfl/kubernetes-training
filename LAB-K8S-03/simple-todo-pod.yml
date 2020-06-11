@@ -9,6 +9,7 @@ spec:
   containers:
   - name: test
     image: sokubedoker/simple-todo:1.0
+    imagePullPolicy: "Always"
     ports:
     - containerPort: 80
     

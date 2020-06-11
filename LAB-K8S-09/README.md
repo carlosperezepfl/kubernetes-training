@@ -1,7 +1,6 @@
 # LAB-K8S-09: NetworkPolicies
 
-**Description**: In this lab, we will be discussing some fairly advanced notions that are NetworkPolicies. These objects make it possible to control who can talk to whom. 
-
+**Description**: In this lab, we will be discussing some fairly advanced notions that are NetworkPolicies. This object make it possible to control communication between pods in cluster
 **Duration**: ±25m
 
 ## Goals

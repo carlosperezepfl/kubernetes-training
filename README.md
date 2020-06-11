@@ -1,10 +1,11 @@
 # Kubernetes Training
 
 Our training labs infrastructure is graciously provided by our partner:
-![hidora](./img/hidora.png)
+
+![sponsor](./img/hidora.png)
 
 
-# Available Courses :
+# Available Labs :
 
  - [LAB-K8S-01 - Basic Setup](./LAB-K8S-01/README.MD)
  - [LAB-K8S-02 - Docker](./LAB-K8S-02/README.MD)

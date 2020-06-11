@@ -2,9 +2,7 @@
 
 **Description**: In this lab, we will be discussing some fairly advanced notions that are NetworkPolicies. These objects make it possible to control who can talk to whom. 
 
-(pod-1/service-1 <---> pod2/service-2)
-
-**Duration**: ±20m
+**Duration**: ±25m
 
 ## Goals
 At the end of this lab, the objective is to understand that Kubernetes has by default a non-restrictive policy, one of the expressions that often comes up: "anyone can talk to anyone" and that to restrict this policy, nothing better than the NetworksPolicies that we will discuss in this lab.
@@ -32,13 +30,15 @@ As you can see, there are several keys :
 - Selectors : Enforcement of rules
    - podSelector : Selecting a group of pods (If MatchLabels = Labels in pod) 
    - namespaceSelector : Selecting a namespace (If MatchLabels = Labels in namespace)
-   - ipBlock : 
+   - ipBlock : TODO
 - PolicyTypes: 
    - Ingress : Outgoing traffic rule
    - Egress : Incoming traffic rule
    - ingress (from) & egress (to) : "Whitelist"
 
-> **WARN** : In the case of a podSelector: {}, all pods in the current namespace are selected, this empty parameter works the same way on ingress: {} or egress:{}.
+> **WARN 1** : In the case of a podSelector: {}, all pods in the current namespace are selected, this empty parameter works the same way on ingress: {} or egress:{}.
+
+> **WARN 2** Due to the ephemeral nature of PODs and of their IP addresses, it is preferrable to rely on podSelectors rather than ipBlocks to design network policies.
 
 --- 
 

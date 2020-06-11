@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: my-app-network-policies
+  namespace: my-namespace
+spec:
+  ingress:
+  - podSelector:
+    matchLabels:
+      app: postgres
+  from:
+  - podSelector:
+      matchLabels:
+        app: backend
+  - podSelector:
+      matchLabels:
+        app: operate
+  policyTypes:
+  - Ingress

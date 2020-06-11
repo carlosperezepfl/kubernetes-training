@@ -14,19 +14,18 @@ At the end of this lab, the objective is to understand that Kubernetes has by de
  - [LAB-K8S-03 - PODs](../LAB-K8S-03/README.MD)
  - [LAB-K8S-04 - Services](../LAB-K8S-04/README.MD)
  - [LAB-K8S-05 - Deployments](../LAB-K8S-05/README.MD)
- - 
- -
  
 ---
 ## NetworkPolicies 
-Let's take a quick look at what a NetworkPolicies object looks like :
+- ✅ Let's take a quick look at what a NetworkPolicies object looks like :
 
 ``` shell
     $ cat networkPolicies-example.yml
 ```
+
 Logically, certain notions should speak to you, as you can see, there are labels... Let's take a closer look at this and take the opportunity to quickly browse through the official documentation : 
 
-- Read | [Concepts - NetworkPolicies](https://kubernetes.io/docs/concepts/services-networking/network-policies/#networkpolicy-resource)
+- ✅ Read | [Concepts - NetworkPolicies](https://kubernetes.io/docs/concepts/services-networking/network-policies/#networkpolicy-resource)
 
 As you can see, there are several keys :
 
@@ -39,13 +38,13 @@ As you can see, there are several keys :
    - Egress : Incoming traffic rule
    - ingress (from) & egress (to) : "Whitelist"
 
-> WARN : In the case of a podSelector: {}, all pods in the current namespace are selected, this empty parameter works the same way on ingress: {} or egress:{}.
+> **WARN** : In the case of a podSelector: {}, all pods in the current namespace are selected, this empty parameter works the same way on ingress: {} or egress:{}.
 
 --- 
 
 ### QUIZZ :
 
-Let's look at the simple rules :
+✅ Let's look at the simple rules :
 
 ``` shell
     $ cat example-1.yml
@@ -62,17 +61,17 @@ Let's look at the simple rules :
 ### For every rule, tell me what it is. 
 ---
 
-Let's go back to the network-policies-example.yml to make it a bit more complex :
+✅ Let's go back to the network-policies-example.yml to make it a bit more complex :
 
 ``` shell
     $ vim network-policies-example.yml
 ```
 
-Let's add one or more rules allowing an operator (which we will call Watto) to communicate with the pod (postgresql)
+- ✅ Let's add one or more rules allowing an operator (which we will call Watto) to communicate with the pod (postgresql)
 
-Please note that operators have their own namespace (chaos) (for security reasons, activity monitoring, etc.). 
+> **INFO** Please note that operators have their own namespace (chaos) (for security reasons, activity monitoring, etc.). 
 
-Done ? Let's see what it looks like ! 
+- ✅ Done ? Let's see what it looks like ! 
 
 ``` shell
     $ cat network-policies-example-2.yml

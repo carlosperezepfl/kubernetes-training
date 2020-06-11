@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-css-additional
+  labels:
+    app: simple-todo
+data:
+  css-additional.css: |
+    body {
+      background-image: url("https://tera-optic.com/wp-content/uploads/2018/04/Home-Four-Banner-Background-Image.png");
+    }
+    .cube__face {
+      background-image: url("https://www.supinfo.com/articles/resources/220921/9402/0.png"); 
+    }

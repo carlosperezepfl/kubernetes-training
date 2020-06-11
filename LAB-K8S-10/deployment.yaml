@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        name: my-app
+        app: my-app
     spec:
       containers:
       - image: sokubedocker/songinx:1.0
@@ -19,7 +19,6 @@ spec:
         name: my-app
         ports:
         - containerPort: 80
-          name: my-app
         volumeMounts:
           - mountPath: "/usr/src/app/static/css/css-additional"
             name: configmap-css-additional

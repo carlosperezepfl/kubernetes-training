@@ -1,4 +1,4 @@
-# LAB-K8S-06: NetworkPolicies
+# LAB-K8S-09: NetworkPolicies
 
 **Description**: In this lab, we will be discussing some fairly advanced notions that are NetworkPolicies. These objects make it possible to control who can talk to whom. 
 
@@ -18,7 +18,7 @@ At the end of this lab, the objective is to understand that Kubernetes has by de
 - ✅ Let's take a quick look at what a NetworkPolicies object looks like :
 
 ``` shell
-    $ cat networkPolicies-example.yml
+    $ cat network-policies-example-1.yml
 ```
 
 Logically, certain notions should speak to you, as you can see, there are labels... Let's take a closer look at this and take the opportunity to quickly browse through the official documentation : 
@@ -64,7 +64,7 @@ As you can see, there are several keys :
 ✅ Let's go back to the network-policies-example.yml to make it a bit more complex :
 
 ``` shell
-    $ vim network-policies-example.yml
+    $ vim network-policies-example-1.yml
 ```
 
 - ✅ Let's add one or more rules allowing an operator (which we will call Watto) to communicate with the pod (postgresql)

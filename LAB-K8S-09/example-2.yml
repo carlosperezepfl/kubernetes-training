@@ -1,10 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
-  name: allow-backend
+  name: example-2
 spec:
-  podSelector:
-   matchLabels:
-     role: backend
+  podSelector: {}
   policyTypes:
   - Ingress
+  ingress:
+  - {}

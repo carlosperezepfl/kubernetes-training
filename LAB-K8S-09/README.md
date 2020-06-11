@@ -59,7 +59,7 @@ Let's look at the simple rules :
     $ cat example-3.yml
 ```
 
-For every rule, tell me what it is. 
+### For every rule, tell me what it is. 
 ---
 
 Let's go back to the network-policies-example.yml to make it a bit more complex :
@@ -70,11 +70,13 @@ Let's go back to the network-policies-example.yml to make it a bit more complex 
 
 Let's add one or more rules allowing an operator (which we will call Watto) to communicate with the pod (postgresql)
 
-Please note that operators have their own namespace (for security reasons, activity monitoring, etc.). 
+Please note that operators have their own namespace (chaos) (for security reasons, activity monitoring, etc.). 
 
-Done? Let's see what it looks like ! 
+Done ? Let's see what it looks like ! 
 
 ``` shell
     $ cat network-policies-example-2.yml
 ```
 
+### Next lab
+ - [LAB-K8S-10 - Ingress](../LAB-K8S-10/README.MD)

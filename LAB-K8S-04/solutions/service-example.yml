@@ -7,9 +7,9 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: my-app-example-2
+    app: my-app-example
   ports: 
     - name: http
       port: 80
       protocol: TCP
-      targetPort: 8080
+      targetPort: 80

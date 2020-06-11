@@ -40,3 +40,41 @@ As you can see, there are several keys :
    - ingress (from) & egress (to) : "Whitelist"
 
 > WARN : In the case of a podSelector: {}, all pods in the current namespace are selected, this empty parameter works the same way on ingress: {} or egress:{}.
+
+--- 
+
+### QUIZZ :
+
+Let's look at the simple rules :
+
+``` shell
+    $ cat example-1.yml
+```
+
+``` shell
+    $ cat example-2.yml
+```
+
+``` shell
+    $ cat example-3.yml
+```
+
+For every rule, tell me what it is. 
+---
+
+Let's go back to the network-policies-example.yml to make it a bit more complex :
+
+``` shell
+    $ vim network-policies-example.yml
+```
+
+Let's add one or more rules allowing an operator (which we will call Watto) to communicate with the pod (postgresql)
+
+Please note that operators have their own namespace (for security reasons, activity monitoring, etc.). 
+
+Done? Let's see what it looks like ! 
+
+``` shell
+    $ cat network-policies-example-2.yml
+```
+

@@ -28,4 +28,15 @@ Logically, certain notions should speak to you, as you can see, there are labels
 
 - Read | [Concepts - NetworkPolicies](https://kubernetes.io/docs/concepts/services-networking/network-policies/#networkpolicy-resource)
 
-As you can see, there are several keys (some specific, some not) :
+As you can see, there are several keys :
+
+- Selectors : Enforcement of rules
+ - podSelector : Selecting a group of pods (If MatchLabels = Labels in pod) 
+ - namespaceSelector : Selecting a namespace (If MatchLabels = Labels in namespace)
+ - ipBlock : 
+- PolicyTypes: 
+ - Ingress : Outgoing traffic rule
+ - Egress : Incoming traffic rule
+- ingress (from) & egress (to) : "Whitelist"
+
+> WARN : In the case of a podSelector: {}, all pods in the current namespace are selected, this empty parameter works the same way on ingress: {} or egress:{}.

@@ -4,7 +4,7 @@
 **Duration**: ±25m
 
 ## Goals
-At the end of this lab, the objective is to understand that Kubernetes has by default a non-restrictive policy, one of the expressions that often comes up: "anyone can talk to anyone" and that to restrict this policy, nothing better than the NetworksPolicies that we will discuss in this lab.
+At the end of this lab, the objective is to understand that Kubernetes has by default a non-restrictive policy (namespace), one of the expressions that often comes up: "anyone can talk to anyone" and that to restrict this policy, nothing better than the NetworksPolicies that we will discuss in this lab.
 
 ## Prerequisites
  - [LAB-K8S-01 - Basic Setup](../LAB-K8S-01/README.MD)

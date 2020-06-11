@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-app
   labels:
-    name: my-app
+    app: my-app
 spec:
   selector:
     matchLabels:

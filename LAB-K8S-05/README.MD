@@ -16,7 +16,7 @@ At the end of this lab, each participant will be able to roll-out and roll-back 
 ---
 
 ## Trouble with the force
-- :white_check_mark: Look at your application using your landing zone, eg: https://sokube-k8s-training.hidora.com/tatooine.
+- :white_check_mark: Look at your application using your landing zone, eg: https://sokube-k8s-training.hidora.com/YOURNAMESPACE/.
 - :white_check_mark: Is it still running ?
 - :white_check_mark: Can you diagnose what happened ?
 ``` shell
@@ -36,7 +36,7 @@ In a :fire: **hurry** :fire:  and while the issue is investigated, our applicati
 - :white_check_mark: Read [Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#define-a-liveness-http-request)
 - :white_check_mark: Update the image  of your POD to **sokubedocker/simple-todo:1.1**, using the **declarative** method (remember we used a YAML in [LAB-K8S-02](../LAB-K8S-02/README.MD)). **Solution** [here](./solutions/simple-todo-pod-emergency.yml).
 
-- :white_check_mark: Try the new application new REST service with your landing zone's URL, eg: https://sokube-k8s-training.hidora.com/tatooine/health, what is it answering ?
+- :white_check_mark: Try the new application new REST service with your landing zone's URL, eg: https://sokube-k8s-training.hidora.com/YOURNAMESPACE/health, what is it answering ?
 
 Let's use what we've learned about **liveness probes** and implement one leveraging this new REST endpoint.
 
@@ -54,7 +54,7 @@ Is our **liveness probe** solving the problem ? The instructor will remotely hav
 watch kubectl get pod simple-todo-pod --namespace=tatooine
 ``` 
 - :white_check_mark: Is it **restarting** ?
-- :white_check_mark: Check your application with your landing zone URL, eg: https://sokube-k8s-training.hidora.com/tatooine/. Is it **available** ?
+- :white_check_mark: Check your application with your landing zone URL, eg: https://sokube-k8s-training.hidora.com/YOURNAMESPACE/. Is it **available** ?
 
 ---
 

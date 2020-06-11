@@ -31,8 +31,8 @@ As you can see, there are several keys :
    - namespaceSelector : Selecting a namespace (If MatchLabels = Labels in namespace)
    - ipBlock : TODO
 - PolicyTypes: 
-   - Ingress : Outgoing traffic rule
-   - Egress : Incoming traffic rule
+   - Ingress : Incoming traffic rule
+   - Egress : Outgoing traffic rule
    - ingress (from) & egress (to) : "Whitelist"
 
 > **WARN 1** : In the case of a podSelector: {}, all pods in the current namespace are selected, this empty parameter works the same way on ingress: {} or egress:{}.

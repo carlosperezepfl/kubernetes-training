@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: my-app
+  labels:
+    name: my-app
+spec:
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        name: my-app
+    spec:
+      containers:
+      - image: sokubedocker/demo:1.0.0 
+        name: my-app
+        ports:
+        - containerPort: 80
+          name: my-app
+        volumeMounts:
+          - mountPath: "/usr/src/app/static/css/css-additional"
+            name: configmap-css-additional
+      volumes:
+        - configMap:
+            name: configmap-css-additional
+          name: configmap-css-additional
+      restartPolicy: Always
+      imagePullPolicy: Always

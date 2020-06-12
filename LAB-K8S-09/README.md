@@ -30,7 +30,7 @@ As you can see, there are several keys :
 - Selectors : Enforcement of rules
    - podSelector : Selecting a group of pods (If MatchLabels = Labels in pod) 
    - namespaceSelector : Selecting a namespace (If MatchLabels = Labels in namespace)
-   - ipBlock : TODO
+   - IpBlock : This selects particular IP CIDR ranges to allow as ingress sources or egress destinations.
 - PolicyTypes: 
    - Ingress : Incoming traffic rule
    - Egress : Outgoing traffic rule
@@ -77,5 +77,10 @@ As you can see, there are several keys :
     $ cat network-policies-example-2.yml
 ```
 
+### TIPS :
+
+- Typically, a namespace to namespace rule pattern is used for networksPolicies. Then of course it depends on the architecture (project-based namespace, specialized namespace etc.).
+- Ingress VS Egress
+ 
 ### Next lab
  - [LAB-K8S-10 - Ingress](../LAB-K8S-10/README.MD)

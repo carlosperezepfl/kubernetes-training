@@ -15,7 +15,7 @@ At the end of this lab, the objective is to understand that Kubernetes has by de
  
 ---
 
-!(https://banzaicloud.com/img/blog/network-security/network-policy.png)
+![configmap-example](https://banzaicloud.com/img/blog/network-security/network-policy.png)
 
 ## NetworkPolicies 
 - ✅ Let's take a quick look at what a NetworkPolicies object looks like :

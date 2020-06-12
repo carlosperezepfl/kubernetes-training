@@ -15,3 +15,5 @@ Our training labs infrastructure is graciously provided by our partner:
  - [LAB-K8S-06 - ConfigMaps](./LAB-K8S-06/README.MD)
  - [LAB-K8S-07 - Secrets](./LAB-K8S-07/README.MD)
  - [LAB-K8S-08 - Persistence](./LAB-K8S-08/README.MD)
+ - [LAB-K8S-09 - Network Policies](./LAB-K8S-09/README.MD)
+ - [LAB-K8S-10 - Ingress](./LAB-K8S-10/README.MD)

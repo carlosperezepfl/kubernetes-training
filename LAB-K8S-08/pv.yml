@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pvtest
+spec:
+  capacity:
+    storage: 50Mi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: small-nfs
+  nfs:
+    path: /data
+    server: node66448-sokube-k8s-training

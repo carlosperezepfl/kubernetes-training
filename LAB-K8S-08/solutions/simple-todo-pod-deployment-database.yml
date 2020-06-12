@@ -1,0 +1,68 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-todo-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-todo
+  template:
+    metadata:
+      labels:
+        app: simple-todo
+    spec:
+      containers:
+      - name: my-simple-todolist
+        image: sokubedocker/simple-todo:3.0
+        imagePullPolicy: "Always"
+        # These variables are coming with V3.0
+        env:
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef: # Reuse postgres secret from db 
+                name: postgres-secret
+                key: POSTGRES_USER
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef: # Reuse postgres secret from db 
+                name: postgres-secret
+                key: POSTGRES_PASSWORD
+          - name: DB_NAME
+            valueFrom:
+              secretKeyRef: # Reuse postgres secret from db 
+                name: postgres-secret
+                key: POSTGRES_DB
+          - name: DB_HOST
+            value: "postgres-service"
+          - name: DB_PORT
+            value: "5432"
+
+        # These variables define the planet page customizations
+        envFrom:
+        - configMapRef:
+            name: configmap-multiple-env
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          periodSeconds: 5
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+        volumeMounts:
+        - name: configmap-css-additional-volume
+          mountPath: "/usr/src/app/static/css/css-additional"          
+        - name: secret-transmission-volume
+          mountPath: "/usr/src/app/static/transmission/"          
+      volumes:
+      - name: configmap-css-additional-volume
+        configMap:
+          name: configmap-css-additional
+      - name: secret-transmission-volume
+        secret:
+          secretName: secret-transmission
+        
+  

@@ -15,24 +15,11 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres:10.4-alpine
+          image: postgres:12.3-alpine
           imagePullPolicy: "Always"
           ports:
             - containerPort: 5432
-          env:
-          - name: POSTGRES_DB
-            valueFrom:
-              secretKeyRef:
+          envFrom:
+            - secretRef:
                 name: postgres-secret
-                key: database-name
-          - name: POSTGRES_USER
-            valueFrom:
-              secretKeyRef:
-                name: postgres-secret
-                key: database-user
-          - name: POSTGRES_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: postgres-secret
-                key: database-password
     

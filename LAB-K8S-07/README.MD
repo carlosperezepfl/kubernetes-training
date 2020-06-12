@@ -28,9 +28,7 @@ Secrets objects are very similar to ConfigMaps.
 
 #### A New Hope
 
-We've just been informed that a droid has just delivered under cover an encoded message in the form of a **Secret** inside your namespace.
-
-**Let's check it out.** 
+We've just been informed that a droid has just delivered under cover an encoded message in the form of a **Secret** inside your namespace. Let's check it out...
 
  - :white_check_mark: Read documentation on [Secrets](https://kubernetes.io/docs/concepts/configuration/secret/)
  - :white_check_mark: Can you see the **Secret** object inside your namespace?
@@ -41,14 +39,14 @@ We've just been informed that a droid has just delivered under cover an encoded 
    ``` shell
    kubectl describe secrets secret-transmission-from-droid 
    ```
-- :white_check_mark: Show its content using the yaml format
+- :white_check_mark: Show the secret content using the YAML format
    ``` shell
    kubectl get secrets secret-transmission-from-droid -o yaml
    ```
 - :white_check_mark: Retrieve the content of the **message** entry in the **data** section, and **decode** it
 
    ``` shell
-   kubectl get secrets --namespace dorin secret-transmission-from-droid -o yaml | \
+   kubectl get secrets secret-transmission-from-droid -o yaml | \
     grep -oP "message: \K(.*)" | base64 --decode
    ```
 

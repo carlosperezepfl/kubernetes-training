@@ -28,21 +28,20 @@ For this task, we gonna use **Secrets** and **Deployments** to deploy this datab
 #### Deploy a PostgreSQL Database
 
 - :white_check_mark: Read the [documentation](https://hub.docker.com/_/postgres) of the PostgreSQL container image to get familiar with the **requirements**, and especially the section around **environment variables**
+
 - :white_check_mark: Write a **Secret** named **postgres-secret** that will define 3 variables necessary to create a working empty database:
 ``` shell
 kubectl create secret generic postgres-secret \
---from-literal=database-password=kenobi \
---from-literal=database-user=obiwan \
---from-literal=database-name=swdb
+--from-literal=POSTGRES_DB=swdb \
+--from-literal=POSTGRES_USER=obiwankenobi \
+--from-literal=POSTGRES_PASSWORD=masterjedi
 ```
+
 - :white_check_mark: Create a deployment for the database, with the following requirements: (**solution** [here](./solutions/postgres-deployment.yml))
   - replica of **1 instance** only
   - The image to use is **postgres:10.4-alpine**
   - Container port **5432**
-  - the environment variables will be defined from the secret postgres-secret using the following mapping:
-    - POSTGRES_DATABASE: postgres-secret/database-name
-    - POSTGRES_USER: postgres-secret/database-user
-    - POSTGRES_PASSWORD: postgres-secret/database-password
+  - the environment variables will be defined from the secret postgres-secret using an all-keys injection (see [here](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/#configure-all-key-value-pairs-in-a-secret-as-container-environment-variables))
  
 - :white_check_mark: Expose the datase with a ClusterIP service named **postgres-service**, accessible on port 5432 as well (**solution** [here](./solutions/postgres-deployment-service.yml))
 

@@ -14,18 +14,27 @@ spec:
         app: simple-todo
     spec:
       containers:
-        - name: my-simple-todolist
-          image: sokubedocker/simple-todo:2.1
-          imagePullPolicy: "Always"
-          envFrom:
-            - configMapRef:
-                name: configmap-multiple-env
-          ports:
-          - containerPort: 8080
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-            periodSeconds: 5
-            initialDelaySeconds: 5
-            timeoutSeconds: 1
+      - name: my-simple-todolist
+        image: sokubedocker/simple-todo:2.1
+        imagePullPolicy: "Always"
+        envFrom:
+        - configMapRef:
+            name: configmap-multiple-env
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          periodSeconds: 5
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+        volumeMounts:
+        - name: configmap-css-additional-volume
+          mountPath: "/usr/src/app/static/css/css-additional"
+      volumes:
+      - name: configmap-css-additional-volume
+        configMap:
+          name: configmap-css-additional
+            
+  

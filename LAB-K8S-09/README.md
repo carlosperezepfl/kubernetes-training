@@ -14,6 +14,9 @@ At the end of this lab, the objective is to understand that Kubernetes has by de
  - [LAB-K8S-05 - Deployments](../LAB-K8S-05/README.MD)
  
 ---
+
+!(https://banzaicloud.com/img/blog/network-security/network-policy.png)
+
 ## NetworkPolicies 
 - ✅ Let's take a quick look at what a NetworkPolicies object looks like :
 
